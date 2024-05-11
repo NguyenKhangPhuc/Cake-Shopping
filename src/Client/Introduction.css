@@ -1,0 +1,137 @@
+.intro_big_lay{
+    width: 99vw;
+    height: 140vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.introduction_layout {
+    width: 100%;
+    height: 100vh;
+  
+}
+
+.intro_center {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2em;
+  
+}
+
+.title {
+    width: 100%;
+    height: 5%;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.intro_poster {
+    width: 100%;
+    height: 36%;
+    background-image: url('https://the350f.com/wp-content/uploads/2021/05/coconut.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 65% 100%;
+}
+.shop_introduction{
+    width: 65%;
+    
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.introduction_title{
+    width: 50%;
+    height: 55%;
+    display: flex;
+    font-size: 30px;
+    
+}
+.contact_information{
+    width: 65%;
+    height: 20%;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 2.5%;
+}
+.contact_title{
+    width: 26%;
+    height: 95%;
+    display: flex;
+    font-size: 30px;
+    
+}
+.bottom_bar{
+    width: 100%;
+    height: 7vh;
+    background-color: #1c254a;
+    display: flex;
+    justify-content: center;
+    font-family: 'Prompt';
+}
+.bottom_shopsystem{
+    width: 65%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    color: #b0b2b5;
+    
+}
+.bottom_shopsystem_features{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    
+}
+.bottom_features{
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: 0.5s;
+}
+.bottom_features:hover{
+    color: white;
+}
+.application{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1em;
+}
+.fb_logo{
+    width: 5%;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.fb_logo:hover{
+    width: 5.5%;
+}
+.insta_logo{
+    width: 5%;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.insta_logo:hover{
+    width: 5.5%;
+}
+.tiktok_logo{
+    width: 5%;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.tiktok_logo:hover{
+    width: 5.5%;
+}

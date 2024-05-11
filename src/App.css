@@ -1,38 +1,724 @@
-.App {
-  text-align: center;
-}
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+@import url('https://fonts.googleapis.com/css?family=Rubik+Doodle+Shadow');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+@import url('https://fonts.googleapis.com/css?family=Prompt');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home_big_lay {
+  width: 99vw;
+  height: auto;
+  font-family: 'Prompt';
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.home_layout {
+
+  width: 99vw;
+  height: 100vh;
+}
+
+.header {
+  width: 100%;
+  height: 20vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  z-index: 100000;
+  font-family: 'Prompt';
+}
+
+.logo_position {
+  width: 10%;
+  height: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 87%;
+}
+
+.shop_system {
+  display: flex;
+  width: 100%;
+  height: 30%;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  gap: 3em;
+  font-size: 1em;
+
+}
+
+.shop_features {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.shop_features:hover {
+  color: brown;
+}
+
+.cart_place {
+  width: 20%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  z-index: 100000;
+  background-color: #3d3d3d;
+  right: 0;
+  transition: 0.5s;
+  gap: 2em;
+
+}
+
+.close_cart {
+  width: 100%;
+  height: 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close_cart:hover {
+  color: yellow;
+}
+
+.cart_products_position {
+  width: 100%;
+  height: 9%;
+
+  display: flex;
+  gap: 1em;
+}
+
+.cart_product_img {
+  width: 20%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 90%;
+  cursor: pointer;
+}
+
+.cart_product_details {
+  width: 47%;
+  height: 100%;
+}
+
+.cart_product_title {
+  font-size: 1.2em;
+  font-weight: bold;
+  font-style: italic;
+  transition: 0.3s;
+  cursor: pointer;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.cart_product_title:hover {
+  color: yellow;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cart_product_price {
+  font-size: 0.8em;
+  color: white;
+}
+
+
+.delete-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.delete-svgIcon {
+  width: 15px;
+  transition-duration: 0.3s;
+}
+
+.delete-svgIcon path {
+  fill: white;
+}
+
+.delete-button:hover {
+  width: 90px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+}
+
+.delete-button:hover .delete-svgIcon {
+  width: 20px;
+  transition-duration: 0.3s;
+  transform: translateY(60%);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.delete-button::before {
+  display: none;
+  content: "Delete";
+  color: white;
+  transition-duration: 0.3s;
+  font-size: 2px;
+}
+
+.delete-button:hover::before {
+  display: block;
+  padding-right: 10px;
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(0px);
+  transition-duration: 0.3s;
+}
+
+
+
+.Btn {
+  width: 130px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(15, 15, 15);
+  border: none;
+  color: white;
+  font-weight: 600;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+
+.svgIcon {
+  width: 16px;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.Btn::before {
+  width: calc(100% + 40px);
+  aspect-ratio: 1/1;
+  position: absolute;
+  content: "";
+  background-color: white;
+  border-radius: 50%;
+  left: -20px;
+  top: 50%;
+  transform: translate(-150%, -50%);
+  transition-duration: .5s;
+  mix-blend-mode: difference;
+}
+
+.Btn:hover::before {
+  transform: translate(0, -50%);
+}
+
+.Btn:active {
+  transform: translateY(4px);
+  transition-duration: .3s;
+}
+
+
+.shop_slideposter {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+}
+
+.slide {
+  width: 100%;
+  height: 82%;
+  background-repeat: no-repeat;
+  background-size: 85% 90%;
+  background-position: center;
+  margin-top: 8%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.arrow_position {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.left_arrow {
+  font-size: 2em;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.right_arrow {
+  font-size: 2em;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+
+.left_arrow:hover {
+  color: #c7c7c7;
+}
+
+.right_arrow:hover {
+  color: #c7c7c7;
+}
+
+.shop_categories {
+  width: 100%;
+  height: 10vh;
+
+  display: flex;
+  justify-content: center;
+  font-size: 1.1em;
+  gap: 4.5em;
+}
+
+.categories_position {
+  width: 35%;
+  height: 100%;
+
+  display: flex;
+  gap: 3em;
+
+}
+
+.categories {
+
+  width: auto;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s;
+
+}
+
+.categories:hover {
+  color: brown;
+  border-bottom: 0.1px solid brown;
+}
+
+.filter_cake {
+  width: 11%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+.filter {
+  width: auto;
+  height: 40%;
+
+  display: flex;
+  justify-content: center;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.filter:hover {
+  color: brown;
+  border-bottom: 0.1px solid brown;
+}
+
+.search {
+  width: auto;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  transition: 0.2s;
+
+  cursor: pointer;
+}
+
+.search:hover {
+  color: brown;
+  border-bottom: 0.1px solid brown;
+}
+
+.filter_place {
+  width: 100%;
+  height: 20vh;
+
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.sorting {
+  width: 50%;
+  height: 100%;
+
+  display: flex;
+  transition: 0.3s;
+}
+
+.sort_method_position {
+  width: 25%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  transition: 0.3s;
+}
+
+.sort_title {
+  width: 100%;
+  height: 20%;
+
+  font-size: 17px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.methods_position {
+  width: 100%;
+  display: flex;
+  height: 70%;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.methods {
+  transition: 0.3s;
+  cursor: pointer;
+
+}
+
+.methods:hover {
+  color: brown;
+}
+
+.sort_price {
+  width: 25%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  transition: 0.3s;
+}
+
+.sort_price_title {
+  width: 100%;
+  height: 20%;
+
+  font-size: 17px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.sort_price_methods_position {
+  width: 100%;
+  display: flex;
+  height: 30%;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.price_methods {
+  transition: 0.3s;
+  cursor: pointer;
+
+}
+
+.price_methods:hover {
+  color: brown;
+}
+
+.search_position {
+  width: 100%;
+  height: 10vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  transition: 1s;
+}
+
+.search_input {
+  width: 45%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+
+::placeholder {
+  font-size: 15px;
+}
+
+.off_input {
+  margin-right: 1em;
+  font-size: 2em;
+  opacity: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.off_input:hover {
+  opacity: 1;
+}
+
+.icon {
+  opacity: 50%;
+  width: 1em;
+}
+
+.search_result {
+  height: auto;
+
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+}
+
+.results {
+  height: auto;
+  width: 100%;
+  padding: 10px;
+  background-color: #ffffff;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.results:hover {
+  background-color: #e3e3e3;
+}
+
+.product_position {
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 2em;
+  transition: 0.5s;
+  cursor: pointer;
+  padding-bottom: 8vh;
+}
+
+.product1 {
+  width: 30%;
+  height: 40vh;
+  background-size: 100% 87%;
+
+  background-position: top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.2s;
+  border: none;
+}
+
+.product2 {
+  width: 30%;
+  height: 40vh;
+  background-size: 100% 87%;
+
+  background-position: top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.2s;
+}
+
+.product3 {
+  width: 30%;
+  height: 40vh;
+  background-size: 100% 87%;
+
+  background-position: top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.2s;
+}
+
+.product4 {
+  width: 63.5%;
+  height: 70vh;
+  background-size: 100% 90%;
+
+  background-position: top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.2s;
+}
+
+.product5 {
+  width: 30%;
+  height: 40vh;
+  background-size: 100% 87%;
+
+  background-position: top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.2s;
+}
+
+.product6 {
+  width: 30%;
+  height: 40vh;
+  background-size: 100% 87%;
+
+  background-position: top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.2s;
+}
+
+.product7 {
+  width: 30%;
+  height: 40vh;
+  background-size: 100% 87%;
+
+  background-position: top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.2s;
+}
+
+.product8 {
+  width: 30%;
+  height: 40vh;
+  background-size: 100% 87%;
+
+  background-position: top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.2s;
+}
+
+.product9 {
+  width: 63.5%;
+  height: 70vh;
+  background-size: 100% 90%;
+
+  background-position: top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.2s;
+}
+
+.product10 {
+  width: 30%;
+  height: 40vh;
+  background-size: 100% 87%;
+
+  background-position: top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.2s;
+}
+
+.product11 {
+  width: 30%;
+  height: 40vh;
+  background-size: 100% 87%;
+
+  background-position: top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.2s;
+}
+
+.product12 {
+  width: 30%;
+  height: 40vh;
+  background-size: 100% 87%;
+
+  background-position: top;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.2s;
+}
+
+
+.cake_title {
+  font-size: 17px;
+}
+
+.cake_price {
+  font-size: 13px;
+  transition: 0.5s;
+}
+
+.showmore_text {
+  font-size: 13px;
+  width: 5vw;
+  border-bottom: 0.2px solid grey;
+  transition: 0.5s;
+  padding-bottom: 5px;
+}
+
+.showmore_text:hover {
+  color: brown;
 }

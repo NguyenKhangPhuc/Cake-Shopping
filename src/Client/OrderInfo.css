@@ -1,0 +1,75 @@
+.order_info_layout {
+    width: 99vw;
+    height: auto;
+}
+
+.order_place_center {
+    width: 100%;
+    min-height: 93vh;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3em;
+}
+
+.order_position {
+    width: 50%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    
+    margin-top: 25vh;
+    align-items: center;
+    gap: 1em;
+}
+
+.order_history_title {
+    font-size: 2em;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.order_form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 10px 0 10px 0;
+    border: 1px solid black;
+
+}
+
+.form_text {
+    width: 8vw;
+    border-left: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Orders {
+    width: 100%;
+    height: auto;
+    padding: 10px 2px 10px 2px;
+    border: 1px solid black;
+    display: flex;
+
+}
+
+.user_order_info {
+    width: 7vw;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    font-size: 14px;
+}
+
+.user_order_cakes {
+    width: 7vw;
+    height: auto;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

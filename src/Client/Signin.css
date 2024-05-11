@@ -1,0 +1,162 @@
+.signin_big_layout {
+  width: 100vw;
+  height: 100vh;
+}
+
+.signin_layout {
+  width: 100%;
+  height: 93%;
+  background-color: #edebeb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Prompt';
+}
+
+.signin_title {
+  width: 100%;
+  height: 20%;
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+
+.username_input {
+  width: 99%;
+  height: 10%;
+  outline: none;
+  border: 0.1px solid grey;
+  font-size: 20px;
+}
+
+.signin_form {
+  width: 30%;
+  height: 60%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.email_input {
+  width: 99%;
+  height: 10%;
+  outline: none;
+  border: 0.1px solid grey;
+  font-size: 20px;
+}
+
+.password_input {
+  width: 99%;
+  height: 10%;
+  outline: none;
+  border: 0.1px solid grey;
+  font-size: 20px;
+}
+
+.signin_button {
+  width: 100%;
+  height: 10%;
+  outline: none;
+  border: 0.1px solid grey;
+  background-color: #001a36;
+  color: white;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.signin_button:hover {
+  background-color: #282828;
+}
+
+.separator {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+}
+
+.create_button {
+  width: 100%;
+  height: 10%;
+  outline: none;
+  border: 0.1px solid grey;
+  color: black;
+  cursor: pointer;
+}
+
+.create_button:hover {
+  border: 2px solid grey;
+}
+
+.signout_button {
+  text-decoration: underline;
+  color: #15466e;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.signout_button:hover {
+  color: blue;
+}
+
+.getnewpw_layout {
+  width: 100vw;
+  height: auto;
+  font-family: 'Prompt';
+}
+
+.getpw_center {
+  width: 100%;
+  height: 93vh;
+  
+  display: flex;
+  justify-content: center;
+}
+
+.reset_pw_form {
+  margin-top: 20vh;
+  width: 30%;
+  height: 70%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.reset_pw_title{
+  height: 10vh;
+  font-size: 2em;
+  font-weight: bold;
+  font-style: italic;
+}
+.reset_pw_email{
+  width: 100%;
+  height: 6%;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  border: 0.1px solid grey;
+}
+.button_position{
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+.submit_button{
+  border: none;
+  width: 6vw;
+  height: 3vh;
+  background-color: cadetblue;
+  color: white;
+  transition: 0.3s;
+}
+.submit_button:hover{
+  background-color: #15466e;
+}
