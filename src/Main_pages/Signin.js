@@ -61,14 +61,14 @@ function Signin() {
       alert("please fill in the blanks")
     } else {
       await axios.post('http://localhost:5000/login', { signInEmail, signInPW })
-        .then(result => {
+        .then(async result => {
           console.log(result.data)
           if (result.data.mssg == 'success') {
             id = result?.data.user._id
             setId(id)
             console.log(id)
             window.localStorage.setItem("userId", id)
-            axios.post('http://localhost:5000/make-list', { id, list })
+          await  axios.post('http://localhost:5000/make-list', { id, list })
               .then(res => {
                 console.log(res)
               })

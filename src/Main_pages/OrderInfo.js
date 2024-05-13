@@ -11,8 +11,8 @@ function OrderInfo() {
     const navigate = useNavigate()
     let { id, setId } = useContext(Container)
     let [list, setList] = useState([])
-    useEffect(() => {
-        axios.post('http://localhost:5000/get-order-info', { id })
+    useEffect(async () => {
+        await axios.post('http://localhost:5000/get-order-info', { id })
             .then(res => {
                 console.log(res)
                 list = res.data

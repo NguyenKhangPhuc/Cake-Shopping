@@ -17,9 +17,27 @@ let userCode
 let signUpCode
 let verifyCode
 
-mongoose.connect('mongodb+srv://nguyenkhangphuc2005:1231232312123@shoppingdb.b1a0wet.mongodb.net/?retryWrites=true&w=majority&appName=ShoppingDB')
-app.listen(5000, () => {
-    console.log("server is running")
+const connectDB = async () => {
+    try {
+        const conn = await mongoose.connect("mongodb+srv://nguyenkhangphuc2005:1231232312123@shoppingdb.b1a0wet.mongodb.net/?retryWrites=true&w=majority&appName=ShoppingDB", {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            dbName: 'test'
+        });
+        console.log(conn.connection.host)
+    } catch (err) {
+        console.log(err)
+    }
+}
+connectDB().then(() => {
+    app.listen(5000, () => {
+        console.log("Server is running on port 3000")
+    })
+
+
+    // app.listen(3000, () => {
+    //     console.log("Server is running on port 3000")
+    // })
 })
 
 
@@ -34,10 +52,10 @@ var transporter = nodemailer.createTransport({
 
 
 
-app.get('/', (req, res) => {
-    ProductModel.find({})
+app.get('/', async (req, res) => {
+    await ProductModel.find({})
         .then((product) => {
-            res.json(product)
+            res.status(200).json(product)
         })
         .catch((err) => {
             console.log(err)
@@ -65,13 +83,13 @@ app.post('/send-code', (req, res) => {
 })
 
 
-app.post('/signup', (req, res) => {
+app.post('/signup', async (req, res) => {
     const { username, signUpEmail, signUpPW, code } = req.body
     if (code == signUpCode) {
-        UserModel.findOne({ signUpEmail })
-            .then(user => {
+        await UserModel.findOne({ signUpEmail })
+            .then(async user => {
                 if (!user) {
-                    UserModel.create({
+                    await UserModel.create({
                         ...req.body,
                         signUpPW: md5Hash.default(signUpPW)
                     })
@@ -87,11 +105,11 @@ app.post('/signup', (req, res) => {
 })
 
 
-app.post('/login', (req, res) => {
+app.post('/login', async (req, res) => {
     let { signInEmail, signInPW } = req.body
     signInPW = md5Hash.default(signInPW)
     console.log(signInPW)
-    UserModel.findOne({ signUpEmail: signInEmail })
+    await UserModel.findOne({ signUpEmail: signInEmail })
         .then(user => {
             if (user) {
                 if (user.signUpPW == signInPW) {
@@ -106,20 +124,20 @@ app.post('/login', (req, res) => {
             }
         })
 })
-app.post('/make-list', (req, res) => {
+app.post('/make-list', async (req, res) => {
     const { id, list } = req.body
-    CartListModel.findOne({ id: id })
-        .then((result) => {
+    await CartListModel.findOne({ id: id })
+        .then(async (result) => {
             if (!result) {
-                CartListModel.create(req.body)
+                await CartListModel.create(req.body)
                     .then(user => { res.json(user) })
                     .catch(e => console.log(e))
             }
         })
 })
-app.post('/update-list', (req, res) => {
+app.post('/update-list', async (req, res) => {
     const { id, listStorage } = req.body
-    CartListModel.updateOne({ id: id }, { list: listStorage })
+    await CartListModel.updateOne({ id: id }, { list: listStorage })
         .then(result => {
             res.json(result)
         })
@@ -127,9 +145,9 @@ app.post('/update-list', (req, res) => {
             console.log(err)
         })
 })
-app.post('/get-list', (req, res) => {
+app.post('/get-list', async (req, res) => {
     const { id } = req.body
-    CartListModel.findOne({ id: id })
+    await CartListModel.findOne({ id: id })
         .then(result => {
             res.json(result)
         })
@@ -137,9 +155,9 @@ app.post('/get-list', (req, res) => {
             console.log(err)
         })
 })
-app.post('/update-cart', (req, res) => {
+app.post('/update-cart', async (req, res) => {
     const { id, cartList } = req.body
-    CartListModel.updateOne({ id: id }, { list: cartList })
+    await CartListModel.updateOne({ id: id }, { list: cartList })
         .then(result => {
             res.json(result)
         })
@@ -147,22 +165,22 @@ app.post('/update-cart', (req, res) => {
             console.log(err)
         })
 })
-app.post('/make-orders-list', (req, res) => {
+app.post('/make-orders-list', async (req, res) => {
     const { id, orderList, name, age, phone, address } = req.body
-    OrderModel.create(req.body)
+    await OrderModel.create(req.body)
         .then(orders => res.json(orders))
         .catch(err => res.json(err))
 })
-app.post('/get-order-info', (req, res) => {
+app.post('/get-order-info', async (req, res) => {
     const { id } = req.body
-    OrderModel.find({ id: id })
+    await OrderModel.find({ id: id })
         .then(orders =>
             res.json(orders)
         )
         .catch(err => res.json(err))
 })
 
-app.post('/find-email', (req, res) => {
+app.post('/find-email', async (req, res) => {
     verifyCode = crypto.randomInt(
         100000, 999999
     )
@@ -173,7 +191,7 @@ app.post('/find-email', (req, res) => {
         subject: 'Your verify code is here',
         text: `${verifyCode}`
     };
-    UserModel.findOne({ signUpEmail: email })
+    await UserModel.findOne({ signUpEmail: email })
         .then(user => {
             if (!user) {
                 res.json('Wrong email information')
@@ -197,10 +215,10 @@ app.post('/check-verifyCode', (req, res) => {
         res.json('Wrong verification code')
     }
 })
-app.post('/change-pw', (req, res) => {
+app.post('/change-pw', async (req, res) => {
     let { email, newPw } = req.body
     newPw = md5Hash.default(newPw)
-    UserModel.updateOne({ signUpEmail: email }, { signUpPW: newPw })
+    await UserModel.updateOne({ signUpEmail: email }, { signUpPW: newPw })
         .then((result) => {
             res.json(result)
         })

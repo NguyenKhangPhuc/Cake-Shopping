@@ -20,10 +20,10 @@ function ProductDetail() {
     let { id, setId } = useContext(Container)
     let [listStorage, setListStorage] = useState([])
     let product
-    useEffect(() => {
+    useEffect(async () => {
         handleGetApi()
         console.log(id)
-        axios.post('http://localhost:5000/get-list', { id })
+        await axios.post('http://localhost:5000/get-list', { id })
             .then(result => {
                 console.log(result)
                 setListStorage(result.data.list)
@@ -61,7 +61,7 @@ function ProductDetail() {
             listStorage = [...listStorage, productData]
             setListStorage(listStorage)
             console.log(listStorage)
-            axios.post('http://localhost:5000/update-list', { id, listStorage })
+            await axios.post('http://localhost:5000/update-list', { id, listStorage })
                 .then(result => {
                     console.log(result)
                 })
