@@ -68,7 +68,7 @@ function Signin() {
             setId(id)
             console.log(id)
             window.localStorage.setItem("userId", id)
-          await  axios.post('http://localhost:5000/make-list', { id, list })
+            await axios.post('http://localhost:5000/make-list', { id, list })
               .then(res => {
                 console.log(res)
               })

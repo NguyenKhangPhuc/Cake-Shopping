@@ -9,6 +9,7 @@ import BottomBar from '../Small_elements/BottomBar'
 
 function Home() {
     const navigate = useNavigate()
+    const productUrl = 'https://cake-shop-servers.onrender.com/'
     const [slideNumber, setSlideNumber] = useState(0)
     const [showArrow, setShowArrow] = useState(false)
     const [productData, setProductData] = useState(null)
@@ -38,7 +39,7 @@ function Home() {
         handleGetApi()
     }, [])
     const handleGetApi = async () => {
-        product = await axios.get('http://localhost:5000')
+        product = await axios.get(productUrl)
         console.log(product)
         setProductData(product.data)
         setDefaultCake(product.data)
