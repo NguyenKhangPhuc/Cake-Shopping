@@ -193,7 +193,7 @@
     }
 
     .shop_introduction {
-        padding-top: 1em;
+        padding-top: 1.5em;
         width: 100%;
         height: 50%;
         display: flex;
@@ -222,11 +222,11 @@
     .contact_information {
 
         width: 100%;
-        height: 30%;
+        height: 50%;
         display: flex;
         flex-direction: column;
-        padding-top: 7em;
-        padding-bottom: 10%;
+        padding-top: 8.5em;
+        padding-bottom: 20%;
     }
 
     .contact_title {
