@@ -17,14 +17,14 @@ function Payment() {
               <div>
                 – Quý Khách thanh toán đầy đủ toàn bộ giá trị đơn hàng cho nhân viên giao nhận ngay sau khi kiểm tra tình trạng đơn hàng (kiểm tra đúng sản phẩm đã đặt còn nguyên vẹn, đầy đủ phụ kiện đi kèm như dao nến và tag chúc mừng, … ).
               </div>
-              <div>– Nếu Quý Khách cần thay đổi hình thức thanh toán khi shipper đã giao hàng đến, hãy gọi Hotline 0908.78.8787 để thông báo và được hỗ trợ nhanh chóng.</div>
+              <div>– Nếu Quý Khách cần thay đổi hình thức thanh toán khi shipper đã giao hàng đến, hãy gọi Hotline 0869977910 để thông báo và được hỗ trợ nhanh chóng.</div>
             </div>
 
           </div>
           <div className='transfer_payment_policies'>
             <div className='transfer_payment_title'>THANH TOÁN CHUYỂN KHOẢN</div>
-            <div>Quý khách hàng có thể thanh toán hoá đơn bằng cách chuyển khoản qua tài khoản của tiệm bánh The 350F với các ngân hàng dưới đây và liên hệ Hotline</div>
-            <div>0908.78.8787 để xác nhận thông tin.</div>
+            <div className='transfer_payment_text'>Quý khách hàng có thể thanh toán hoá đơn bằng cách chuyển khoản qua tài khoản của tiệm bánh The Cake với các ngân hàng dưới đây và liên hệ Hotline</div>
+            <div>0869977910 để xác nhận thông tin.</div>
             <div className='bank_information'>
               <img src='https://the350f.com/wp-content/uploads/2021/05/logo-Vietcombank.png' className='bank_logo' />
               <div style={{fontWeight: 'bold'}}>
@@ -37,7 +37,7 @@ function Payment() {
         </div>
       </div>
 
-      <div style={{ width: '100%', height: '23vh',display:'flex',justifyContent:'center' }}><ContactBoard /></div>
+      <ContactBoard/>
       <BottomBar/>
     </div>
   )

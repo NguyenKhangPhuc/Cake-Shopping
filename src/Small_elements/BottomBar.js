@@ -24,7 +24,7 @@ function BottomBar() {
                         )
                     })}
                 </div>
-                <div className='bottom_provided_text'>© 2024 by The 350F Group</div>
+                <div className='bottom_provided_text'>© 2024 by The Cake</div>
                 <div className='application'>
                     <img src='https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg' className='fb_logo'></img>
                     <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/2048px-Instagram_logo_2022.svg.png' className='insta_logo' />

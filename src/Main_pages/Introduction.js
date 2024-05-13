@@ -7,13 +7,14 @@ function Introduction() {
 
   return (
     <div className='intro_big_lay'>
+
       <div className='introduction_layout'>
         <Shopsystem1 />
         <div className='intro_center'>
           <div className='title'>Về chúng tôi</div>
           <div className='intro_poster' ></div>
           <div className='shop_introduction'>
-            <div className='introduction_title'>The 350F</div>
+            <div className='introduction_title'>The Cake</div>
             <div className='introduction_text'>
               <p>Ở tiệm bánh The 350F, mỗi chiếc bánh là một câu chuyện riêng với hơi thở và tinh thần chẳng thể lẫn vào đâu được.</p>
               <p>
@@ -27,6 +28,7 @@ function Introduction() {
         </div>
       </div>
       <div className='contact_information'>
+
         <div className='contact_title'>Thông tin liên hệ</div>
         <div className='contact_text'>
           <p >Hotline: 1800 8287</p>
@@ -39,7 +41,10 @@ function Introduction() {
           </div>
           <p>Ngày làm việc: Tất cả các ngày trong tuần</p>
           <p>Giờ làm việc: 09h00 – 21h30</p>
+
         </div>
+
+
       </div>
       <BottomBar />
     </div>

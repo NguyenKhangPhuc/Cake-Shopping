@@ -74,14 +74,17 @@ function ProductDetail() {
             <Shopsystem1 />
             <div className='empty_div' ></div>
             <div className='productdetail_center'>
-                <div className='imgs_list'>
-                    {listImgs?.map((cakes, index) => {
-                        return (
-                            <div className='small_imgs' style={{ backgroundImage: `url(${listImgs[index]})`, opacity: `${checkSmallImgs == index ? '50%' : '100%'}` }} onClick={() => chooseImg(index, listImgs[index])}></div>
-                        )
-                    })}
+                <div className='imgs_details_position'>
+                    <div className='imgs_list'>
+                        {listImgs?.map((cakes, index) => {
+                            return (
+                                <div className='small_imgs' style={{ backgroundImage: `url(${listImgs[index]})`, opacity: `${checkSmallImgs == index ? '50%' : '100%'}` }} onClick={() => chooseImg(index, listImgs[index])}></div>
+                            )
+                        })}
+                    </div>
+                    <div className='represent_img' style={{ backgroundImage: `url(${bigImg})` }}></div>
                 </div>
-                <div className='represent_img' style={{ backgroundImage: `url(${bigImg})` }}></div>
+
                 {productData?.map((cake, index) => {
                     return (
                         <div className='introduction_place_detail'>

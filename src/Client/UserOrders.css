@@ -117,3 +117,25 @@ button {
     border: none;
     background: transparent;
 }
+
+@media screen and (max-width: 430px) {
+    .user_form {
+
+        height: 100%;
+   
+    }
+
+    .form {
+        padding-top: 5em;
+        margin-top: 0rem;
+        width: 80%;
+        
+        height: auto;
+        padding-bottom: 5em;
+        
+    }
+    .info_input{
+        width: 70%;
+        height: 4vh;
+    }
+}

@@ -1,5 +1,5 @@
 .productdetail_layout {
-    width: 99vw;
+    width: 100vw;
     height: auto;
 
 }
@@ -19,12 +19,18 @@
     justify-content: center;
     gap: 1em;
     padding-bottom: 5.9em;
+
+}
+
+.imgs_details_position {
+
+    display: flex;
+    height: auto;
 }
 
 .imgs_list {
     width: 5vw;
     height: 45vh;
-
     margin-top: 10vh;
     display: flex;
     flex-direction: column;
@@ -61,6 +67,7 @@
     display: flex;
     flex-direction: column;
     padding: 0 4em 0 3em;
+    align-items: center;
 }
 
 .cake_title_detail {
@@ -68,7 +75,7 @@
     height: 5vh;
 
     display: flex;
-    
+
     font-size: 1.5em;
     font-weight: bold;
 }
@@ -152,7 +159,7 @@
     background-color: #001a36;
     color: white;
     width: 100%;
-    height: 8%;
+    height: 5vh;
     transition: 0.3s;
     cursor: pointer;
 }
@@ -162,7 +169,7 @@
 }
 
 .cake_description {
-    
+
     width: 100%;
     height: auto;
     display: flex;
@@ -171,17 +178,19 @@
     gap: 2em;
     padding-bottom: 4em;
 }
-.description_place{
-    
+
+.description_place {
+
     width: 47%;
     height: auto;
     display: flex;
     gap: 1em;
     flex-direction: column;
     font-size: 15px;
-    
+
 }
-.des_title{
+
+.des_title {
     font-size: 18px;
     width: auto;
     height: auto;
@@ -189,3 +198,95 @@
     border-bottom: 1px solid black;
 }
 
+@media screen and (max-width: 430px) {
+    .productdetail_layout {
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .empty_div {
+        display: none;
+    }
+
+    .productdetail_center {
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+    }
+
+    .imgs_details_position {
+
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .imgs_list {
+
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        justify-content: center;
+    }
+
+    .small_imgs {
+        width: 20%;
+        background-size: 100%;
+
+    }
+
+    .represent_img {
+        width: 100%;
+        height: 50vh;
+        background-size: 100% 100%;
+    }
+
+    .introduction_place_detail {
+
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cake_title_detail {
+
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .cake_price_detail {
+
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .cake_size_detail {
+
+        width: 90%;
+    }
+
+    .description_place {
+
+        width: 95%;
+        font-size: 90%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .addtocart_button {
+        height: 5vh;
+    }
+}

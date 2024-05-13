@@ -202,7 +202,6 @@ function Home() {
             </div>
             <BottomBar />
         </div>
-
     )
 }
 

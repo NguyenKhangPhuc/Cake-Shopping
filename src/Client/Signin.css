@@ -1,5 +1,5 @@
 .signin_big_layout {
-  width: 100vw;
+  width: 99vw;
   height: 100vh;
 }
 
@@ -114,7 +114,7 @@
 .getpw_center {
   width: 100%;
   height: 93vh;
-  
+
   display: flex;
   justify-content: center;
 }
@@ -123,20 +123,22 @@
   margin-top: 20vh;
   width: 30%;
   height: 70%;
-  
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1em;
 }
-.reset_pw_title{
+
+.reset_pw_title {
   height: 10vh;
   font-size: 2em;
   font-weight: bold;
   font-style: italic;
 }
-.reset_pw_email{
+
+.reset_pw_email {
   width: 100%;
   height: 6%;
   outline: none;
@@ -144,12 +146,14 @@
   border-radius: 10px;
   border: 0.1px solid grey;
 }
-.button_position{
+
+.button_position {
   height: 10vh;
   display: flex;
   align-items: center;
 }
-.submit_button{
+
+.submit_button {
   border: none;
   width: 6vw;
   height: 3vh;
@@ -157,6 +161,39 @@
   color: white;
   transition: 0.3s;
 }
-.submit_button:hover{
+
+.submit_button:hover {
   background-color: #15466e;
+}
+
+@media screen and (max-width: 430px) {
+ 
+  .signin_form{
+    
+    height: 100%;
+  }
+
+  .signin_form {
+
+    width: 80%;
+  }
+
+  .reset_pw_form {
+
+    width: 90%;
+  }
+
+  .button_position {
+
+    width: 30%;
+  }
+
+  .submit_button {
+    width: 100%;
+
+  }
+  .reset_pw_title{
+    font-size: 200%;
+  }
+
 }

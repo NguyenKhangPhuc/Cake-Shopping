@@ -1,14 +1,15 @@
-.intro_big_lay{
+.intro_big_lay {
     width: 99vw;
-    height: 140vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .introduction_layout {
     width: 100%;
     height: 100vh;
-  
+
 }
 
 .intro_center {
@@ -19,7 +20,7 @@
     align-items: center;
     justify-content: flex-end;
     gap: 2em;
-  
+
 }
 
 .title {
@@ -29,7 +30,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
 .intro_poster {
@@ -40,38 +41,44 @@
     background-repeat: no-repeat;
     background-size: 65% 100%;
 }
-.shop_introduction{
+
+.shop_introduction {
     width: 65%;
-    
+    justify-content: center;
+
     height: 30%;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.introduction_title{
+
+.introduction_title {
     width: 50%;
     height: 55%;
     display: flex;
     font-size: 30px;
-    
+
 }
-.contact_information{
+
+.contact_information {
     width: 65%;
-    height: 20%;
-    
+    height: 100%;
+
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     padding-bottom: 2.5%;
 }
-.contact_title{
+
+.contact_title {
     width: 26%;
     height: 95%;
     display: flex;
     font-size: 30px;
-    
+
 }
-.bottom_bar{
+
+.bottom_bar {
     width: 100%;
     height: 7vh;
     background-color: #1c254a;
@@ -79,31 +86,36 @@
     justify-content: center;
     font-family: 'Prompt';
 }
-.bottom_shopsystem{
+
+.bottom_shopsystem {
     width: 65%;
     height: 100%;
     display: flex;
     align-items: center;
     color: #b0b2b5;
-    
+
 }
-.bottom_shopsystem_features{
+
+.bottom_shopsystem_features {
     width: 40%;
     height: 100%;
     display: flex;
     gap: 2em;
     align-items: center;
-    
+
 }
-.bottom_features{
+
+.bottom_features {
     cursor: pointer;
     font-size: 0.9em;
     transition: 0.5s;
 }
-.bottom_features:hover{
+
+.bottom_features:hover {
     color: white;
 }
-.application{
+
+.application {
     width: 40%;
     height: 100%;
     display: flex;
@@ -111,27 +123,170 @@
     align-items: center;
     gap: 1em;
 }
-.fb_logo{
+
+.fb_logo {
     width: 5%;
     transition: 0.3s;
     cursor: pointer;
 }
-.fb_logo:hover{
+
+.fb_logo:hover {
     width: 5.5%;
 }
-.insta_logo{
+
+.insta_logo {
     width: 5%;
     transition: 0.3s;
     cursor: pointer;
 }
-.insta_logo:hover{
+
+.insta_logo:hover {
     width: 5.5%;
 }
-.tiktok_logo{
+
+.tiktok_logo {
     width: 5%;
     transition: 0.3s;
     cursor: pointer;
 }
-.tiktok_logo:hover{
+
+.tiktok_logo:hover {
     width: 5.5%;
+}
+
+@media screen and (max-width: 430px) {
+    .intro_big_lay {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .introduction_layout {
+        width: 100%;
+        height: 50%;
+    }
+
+    .intro_center {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .title {
+        padding-top: 0.5em;
+        font-size: 200%;
+        gap: 2em;
+        
+        justify-content: center;
+        display: flex;
+        align-items: center;
+
+    }
+
+    .intro_poster {
+        width: 100%;
+        height: 50%;
+        
+        background-size: 100%;
+        padding-bottom: 5em;
+    }
+
+    .shop_introduction {
+        padding-top: 1em;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .introduction_title {
+        font-size: 90%;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+
+        justify-content: center;
+    }
+
+    .introduction_text {
+        font-size: 80%;
+
+        justify-content: center;
+        width: 90%;
+
+    }
+
+    .contact_information {
+
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 30%;
+    }
+
+    .contact_title {
+        font-size: 91%;
+        width: auto;
+        flex-wrap: wrap;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+
+        height: 10%;
+        justify-content: center;
+
+    }
+
+    .contact_text {
+        font-size: 80%;
+        width: 90%;
+
+    }
+
+    .bottom_bar {
+        width: 100%;
+        height: 25vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bottom_shopsystem {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        color: #b0b2b5;
+        flex-direction: column;
+
+
+    }
+
+    .bottom_shopsystem_features {
+        width: 70%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        font-size: 80%;
+        gap: 1em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+
+    .bottom_features {
+        cursor: pointer;
+        font-size: 80%;
+        transition: 0.5s;
+    }
+
+    .application {
+        width: 80%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
 }

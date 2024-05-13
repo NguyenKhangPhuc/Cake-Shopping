@@ -49,14 +49,19 @@ app.post('/send-code', (req, res) => {
         100000, 999999
     )
     const { signUpEmail } = req.body
-    var mailOptions = {
+    var mailOptions1 = {
         from: 'nguyenkhangphuc2005@gmail.com',
         to: `${signUpEmail}`,
         subject: 'Your sign up code is here',
         text: `${signUpCode}`
     };
-
-
+    transporter.sendMail(mailOptions1, function (error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email sent: ' + info.response);
+        }
+    });
 })
 
 
@@ -165,7 +170,7 @@ app.post('/find-email', (req, res) => {
     var mailOptions = {
         from: 'nguyenkhangphuc2005@gmail.com',
         to: `${email}`,
-        subject: 'Your sign up code is here',
+        subject: 'Your verify code is here',
         text: `${verifyCode}`
     };
     UserModel.findOne({ signUpEmail: email })

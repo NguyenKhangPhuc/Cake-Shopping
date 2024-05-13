@@ -6,8 +6,9 @@ import ContactBoard from '../Small_elements/ContactBoard'
 function Delivery() {
   return (
     <div className='delivery_big_lay'>
+      <Shopsystem1 />
       <div className='delivery_lay_1'>
-        <Shopsystem1 />
+        
         <div className='delivery_center'>
           <div className='delivery_title'> CHÍNH SÁCH GIAO HÀNG</div>
           <div className='delivery_policies'>
@@ -18,10 +19,12 @@ function Delivery() {
             <p>– Quý khách hàng nhận bánh nếu chưa ăn liền thì cần bảo quản ở tủ lạnh ngăn mát. Bánh lạnh nếu để quá lâu ở nhiệt độ phòng sẽ bị chảy và mất kết cấu ban đầu.</p>
             <p>– Khi nhận bánh, vui lòng kiểm tra bánh trước khi nhận, nếu bánh có dấu hiệu đổ vỡ thì TUYỆT ĐỐI KHÔNG NHẬN bánh và liên hệ Hotline 1800 8287 để được hỗ trợ xử lý ngay lập tức.
             </p>
+           
           </div>
-          <ContactBoard/>
+          
         </div>
       </div>
+      <ContactBoard/>
       <BottomBar />
     </div>
   )

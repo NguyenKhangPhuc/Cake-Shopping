@@ -1,21 +1,25 @@
 .delivery_big_lay {
     width: 99vw;
-    height: 107vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .delivery_lay_1 {
     width: 100%;
     height: 100vh;
-   
+
     display: flex;
     flex-direction: column;
+
 }
 
 .delivery_center {
     width: 100%;
     height: 90%;
     margin-top: 10%;
-  
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,7 +36,8 @@
     padding-bottom: 2%;
     border-bottom: 1px solid grey;
 }
-.delivery_policies{
+
+.delivery_policies {
     width: 65%;
     height: 50%;
 
@@ -40,7 +45,8 @@
     padding-top: 1%;
     padding-bottom: 2%;
 }
-.delivery_helps{
+
+.delivery_helps {
     width: 65%;
     height: 17vh;
     background-color: #141b40;
@@ -51,4 +57,58 @@
     font-size: 19px;
     color: #ded5c3;
     border-radius: 30px;
+}
+
+@media screen and (max-width: 430px) {
+    .delivery_big_lay {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .delivery_lay_1 {
+
+        width: 100%;
+        height: auto;
+        padding-bottom: 4em;
+    }
+
+    .delivery_center {
+
+        width: 100%;
+        height: 85%;
+
+        display: flex;
+        margin-top: 0rem;
+    }
+
+    .delivery_title {
+        font-size: 150%;
+        width: 85%;
+        height: 10%;
+    }
+
+    .delivery_policies {
+        font-size: 80%;
+
+        width: 85%;
+        height: 100%;
+
+    }
+
+    .delivery_helps {
+        width: 85%;
+        height: 20%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 70%;
+        color: #ded5c3;
+        border-radius: 30px;
+        margin-bottom: 2em;
+    }
 }

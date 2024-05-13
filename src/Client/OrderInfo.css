@@ -16,7 +16,7 @@
     height: 70%;
     display: flex;
     flex-direction: column;
-    
+
     margin-top: 25vh;
     align-items: center;
     gap: 1em;
@@ -60,7 +60,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-   
+
     font-size: 14px;
 }
 
@@ -72,4 +72,48 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+@media screen and (max-width: 430px) {
+    .order_place_center {
+
+        width: 100%;
+
+    }
+
+    .order_position {
+
+        width: 95%;
+    }
+
+    .order_history_title {
+        font-size: 150%;
+    }
+
+    .order_form {}
+
+    .form_text {
+        width: 20%;
+        border-left: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 50%;
+        font-weight: bold;
+    }
+
+    .Orders {}
+
+    .user_order_info {
+        border-right: 0.1px solid black;
+        width: 15%;
+        font-size: 50%;
+    }
+
+    .user_order_cakes {
+
+        width: 14%;
+        font-size: 50%;
+    }
 }
