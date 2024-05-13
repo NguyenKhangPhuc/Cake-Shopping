@@ -5,11 +5,10 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import Shopsystem1 from '../Small_elements/Shopsystem1'
 import BottomBar from '../Small_elements/BottomBar'
-
+export const dbUrl = 'https://cake-shop-servers.onrender.com/'
 
 function Home() {
     const navigate = useNavigate()
-    const productUrl = 'https://cake-shop-servers.onrender.com/'
     const [slideNumber, setSlideNumber] = useState(0)
     const [showArrow, setShowArrow] = useState(false)
     const [productData, setProductData] = useState(null)
@@ -39,7 +38,7 @@ function Home() {
         handleGetApi()
     }, [])
     const handleGetApi = async () => {
-        product = await axios.get(productUrl)
+        product = await axios.get(dbUrl)
         console.log(product)
         setProductData(product.data)
         setDefaultCake(product.data)
@@ -173,7 +172,7 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                </div>:<div style={{ transition: '0.5s' }}></div>}
+                </div> : <div style={{ transition: '0.5s' }}></div>}
             {showSearch == true ?
                 <div className='search_position'>
 

@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import BottomBar from '../Small_elements/BottomBar'
 import Shopsystem1 from '../Small_elements/Shopsystem1'
 import '../Client/UserOrders.css'
+import { dbUrl } from './Home'
 function UserOrders() {
     const navigate = useNavigate()
     let { id, setId } = useContext(Container)
@@ -16,8 +17,8 @@ function UserOrders() {
     const [address, setAddress] = useState('')
     let [orderList, setOrderList] = useState([])
     let [totalPrice, setTotalPrice] = useState(0)
-    useEffect( () => {
-         axios.post('http://localhost:5000/get-list', { id })
+    useEffect(() => {
+        axios.post(dbUrl + 'get-list', { id })
             .then(result => {
                 orderList = result.data.list
                 setOrderList(orderList)
@@ -36,7 +37,7 @@ function UserOrders() {
             }
             setTotalPrice(totalPrice)
 
-            await axios.post('http://localhost:5000/make-orders-list', { id, orderList, name, age, phone, address, totalPrice })
+            await axios.post(dbUrl + 'make-orders-list', { id, orderList, name, age, phone, address, totalPrice })
                 .then(res => {
                     console.log(res)
                     navigate('/order-information')

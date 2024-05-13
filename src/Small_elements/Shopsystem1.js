@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { Container } from '../App'
 import { useEffect } from 'react'
 import axios from 'axios'
+import { dbUrl } from '../Main_pages/Home'
 function Shopsystem1() {
     const shopSystem = [
         { title: 'Shop', link: '' },
@@ -19,10 +20,10 @@ function Shopsystem1() {
     let [totalPrice, setTotalPrice] = useState(0)
     const [showShopsystem, setShowShopsystem] = useState(false)
     const navigate = useNavigate()
-    useEffect( () => {
+    useEffect(() => {
         console.log(id)
         if (id) {
-            axios.post('http://localhost:5000/get-list', { id })
+            axios.post(dbUrl + 'get-list', { id })
                 .then(result => {
                     cartList = result.data.list
                     setCartList(cartList)
@@ -48,7 +49,7 @@ function Shopsystem1() {
         console.log(filterProduct)
         cartList = filterProduct
         setCartList(cartList)
-        await axios.post('http://localhost:5000/update-cart', { id, cartList })
+        await axios.post(dbUrl + 'update-cart', { id, cartList })
             .then(res => console.log(res))
             .catch(err => console.log(err))
 

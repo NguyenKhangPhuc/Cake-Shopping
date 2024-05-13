@@ -6,6 +6,7 @@ import { useEffect } from 'react'
 import Shopsystem1 from '../Small_elements/Shopsystem1'
 import BottomBar from '../Small_elements/BottomBar'
 import '../Client/Signin.css'
+import { dbUrl } from './Home'
 function GetNewPw() {
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
@@ -20,7 +21,7 @@ function GetNewPw() {
         if (!email) {
             alert('Please enter your email')
         } else {
-            await axios.post('http://localhost:5000/find-email', { email })
+            await axios.post(dbUrl + 'find-email', { email })
                 .then(res => {
                     if (res.data == 'Wrong email information') {
                         alert('Wrong email information')
@@ -34,13 +35,13 @@ function GetNewPw() {
 
     }
     const SubmitCode = async () => {
-        await axios.post('http://localhost:5000/check-verifyCode', { code })
+        await axios.post(dbUrl + 'check-verifyCode', { code })
             .then(res => {
                 if (res.data == 'success') {
                     setCheckCode(false)
                     setShowPw(true)
                     setDisable(true)
-                    
+
                 } else if (res.data == 'Wrong verification code') {
                     alert('Wrong verification code')
                 }
@@ -52,7 +53,7 @@ function GetNewPw() {
         if (newPw.length < 9) {
             alert('Password too weak')
         } else {
-            await axios.post('http://localhost:5000/change-pw', { email, newPw })
+            await axios.post(dbUrl + 'change-pw', { email, newPw })
                 .then(res => {
                     console.log(res)
                     navigate('/Signin')

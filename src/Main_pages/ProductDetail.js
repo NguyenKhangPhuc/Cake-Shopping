@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 import BottomBar from '../Small_elements/BottomBar'
 import { Container } from '../App'
 import { useNavigate } from 'react-router-dom'
-
+import { dbUrl } from './Home'
 function ProductDetail() {
     const navigate = useNavigate()
     const { cakeId } = useParams()
@@ -20,10 +20,10 @@ function ProductDetail() {
     let { id, setId } = useContext(Container)
     let [listStorage, setListStorage] = useState([])
     let product
-    useEffect( () => {
+    useEffect(() => {
         handleGetApi()
         console.log(id)
-         axios.post('http://localhost:5000/get-list', { id })
+        axios.post(dbUrl + 'get-list', { id })
             .then(result => {
                 console.log(result)
                 setListStorage(result.data.list)
@@ -34,7 +34,7 @@ function ProductDetail() {
     }, [])
     const handleGetApi = async () => {
 
-        product = await axios.get('http://localhost:5000')
+        product = await axios.get(dbUrl)
 
         const chosenProduct = product.data.filter((cakes, index) => {
             return cakes._id == cakeId
@@ -61,7 +61,7 @@ function ProductDetail() {
             listStorage = [...listStorage, productData]
             setListStorage(listStorage)
             console.log(listStorage)
-            await axios.post('http://localhost:5000/update-list', { id, listStorage })
+            await axios.post(dbUrl + 'update-list', { id, listStorage })
                 .then(result => {
                     console.log(result)
                 })

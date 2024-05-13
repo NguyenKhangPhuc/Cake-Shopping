@@ -7,6 +7,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { Container } from '../App'
 import { useEffect } from 'react'
+import { dbUrl } from './Home'
 function Signin() {
   let { id, setId } = useContext(Container)
   let { list, setList } = useContext(Container)
@@ -40,7 +41,7 @@ function Signin() {
     if (!username || !signUpEmail || !signUpPW) {
       alert("please fill in the blank")
     } else {
-      await axios.post('http://localhost:5000/signup', { username, signUpEmail, signUpPW, code })
+      await axios.post(dbUrl + 'signup', { username, signUpEmail, signUpPW, code })
         .then(result => {
           console.log(result)
           if (result.data == 'Email already in use') {
@@ -60,7 +61,7 @@ function Signin() {
     if (!signInEmail || !signInPW) {
       alert("please fill in the blanks")
     } else {
-      await axios.post('http://localhost:5000/login', { signInEmail, signInPW })
+      await axios.post(dbUrl + 'login', { signInEmail, signInPW })
         .then(async result => {
           console.log(result.data)
           if (result.data.mssg == 'success') {
@@ -68,7 +69,7 @@ function Signin() {
             setId(id)
             console.log(id)
             window.localStorage.setItem("userId", id)
-            await axios.post('http://localhost:5000/make-list', { id, list })
+            await axios.post(dbUrl + 'make-list', { id, list })
               .then(res => {
                 console.log(res)
               })
@@ -94,7 +95,7 @@ function Signin() {
       alert("please fill in the blank")
     } else {
       setSignUp(true)
-      await axios.post('http://localhost:5000/send-code', { signUpEmail })
+      await axios.post(dbUrl+'send-code', { signUpEmail })
         .then(res => console.log(res))
         .catch(err => console.log(err))
     }

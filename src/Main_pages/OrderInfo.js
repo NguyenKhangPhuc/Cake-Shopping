@@ -7,12 +7,13 @@ import { useNavigate } from 'react-router-dom'
 import BottomBar from '../Small_elements/BottomBar'
 import Shopsystem1 from '../Small_elements/Shopsystem1'
 import '../Client/OrderInfo.css'
+import { dbUrl } from './Home'
 function OrderInfo() {
     const navigate = useNavigate()
     let { id, setId } = useContext(Container)
     let [list, setList] = useState([])
-    useEffect( () => {
-         axios.post('http://localhost:5000/get-order-info', { id })
+    useEffect(() => {
+        axios.post(dbUrl + 'get-order-info', { id })
             .then(res => {
                 console.log(res)
                 list = res.data
