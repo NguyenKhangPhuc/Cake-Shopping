@@ -19,10 +19,10 @@ function Shopsystem1() {
     let [totalPrice, setTotalPrice] = useState(0)
     const [showShopsystem, setShowShopsystem] = useState(false)
     const navigate = useNavigate()
-    useEffect(async () => {
+    useEffect( () => {
         console.log(id)
         if (id) {
-           await axios.post('http://localhost:5000/get-list', { id })
+            axios.post('http://localhost:5000/get-list', { id })
                 .then(result => {
                     cartList = result.data.list
                     setCartList(cartList)

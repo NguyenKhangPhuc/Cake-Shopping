@@ -20,10 +20,10 @@ function ProductDetail() {
     let { id, setId } = useContext(Container)
     let [listStorage, setListStorage] = useState([])
     let product
-    useEffect(async () => {
+    useEffect( () => {
         handleGetApi()
         console.log(id)
-        await axios.post('http://localhost:5000/get-list', { id })
+         axios.post('http://localhost:5000/get-list', { id })
             .then(result => {
                 console.log(result)
                 setListStorage(result.data.list)
