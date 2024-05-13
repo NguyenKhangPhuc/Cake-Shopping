@@ -18,7 +18,7 @@ function UserOrders() {
     let [orderList, setOrderList] = useState([])
     let [totalPrice, setTotalPrice] = useState(0)
     useEffect(() => {
-        axios.post(dbUrl + 'get-list', { id })
+        axios.post(dbUrl + '/get-list', { id })
             .then(result => {
                 orderList = result.data.list
                 setOrderList(orderList)
@@ -37,7 +37,7 @@ function UserOrders() {
             }
             setTotalPrice(totalPrice)
 
-            await axios.post(dbUrl + 'make-orders-list', { id, orderList, name, age, phone, address, totalPrice })
+            await axios.post(dbUrl + '/make-orders-list', { id, orderList, name, age, phone, address, totalPrice })
                 .then(res => {
                     console.log(res)
                     navigate('/order-information')

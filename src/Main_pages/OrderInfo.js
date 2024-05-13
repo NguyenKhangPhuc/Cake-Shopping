@@ -13,7 +13,7 @@ function OrderInfo() {
     let { id, setId } = useContext(Container)
     let [list, setList] = useState([])
     useEffect(() => {
-        axios.post(dbUrl + 'get-order-info', { id })
+        axios.post(dbUrl + '/get-order-info', { id })
             .then(res => {
                 console.log(res)
                 list = res.data

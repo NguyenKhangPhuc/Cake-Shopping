@@ -23,7 +23,7 @@ function ProductDetail() {
     useEffect(() => {
         handleGetApi()
         console.log(id)
-        axios.post(dbUrl + 'get-list', { id })
+        axios.post(dbUrl + '/get-list', { id })
             .then(result => {
                 console.log(result)
                 setListStorage(result.data.list)
@@ -61,7 +61,7 @@ function ProductDetail() {
             listStorage = [...listStorage, productData]
             setListStorage(listStorage)
             console.log(listStorage)
-            await axios.post(dbUrl + 'update-list', { id, listStorage })
+            await axios.post(dbUrl + '/update-list', { id, listStorage })
                 .then(result => {
                     console.log(result)
                 })

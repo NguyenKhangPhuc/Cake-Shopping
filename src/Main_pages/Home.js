@@ -5,7 +5,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import Shopsystem1 from '../Small_elements/Shopsystem1'
 import BottomBar from '../Small_elements/BottomBar'
-export const dbUrl = 'https://cake-shop-servers.onrender.com/'
+export const dbUrl = 'https://cake-shop-servers.onrender.com'
 
 function Home() {
     const navigate = useNavigate()

@@ -23,7 +23,7 @@ function Shopsystem1() {
     useEffect(() => {
         console.log(id)
         if (id) {
-            axios.post(dbUrl + 'get-list', { id })
+            axios.post(dbUrl + '/get-list', { id })
                 .then(result => {
                     cartList = result.data.list
                     setCartList(cartList)
@@ -49,7 +49,7 @@ function Shopsystem1() {
         console.log(filterProduct)
         cartList = filterProduct
         setCartList(cartList)
-        await axios.post(dbUrl + 'update-cart', { id, cartList })
+        await axios.post(dbUrl + '/update-cart', { id, cartList })
             .then(res => console.log(res))
             .catch(err => console.log(err))
 

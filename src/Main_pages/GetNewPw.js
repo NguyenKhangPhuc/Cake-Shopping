@@ -21,7 +21,7 @@ function GetNewPw() {
         if (!email) {
             alert('Please enter your email')
         } else {
-            await axios.post(dbUrl + 'find-email', { email })
+            await axios.post(dbUrl + '/find-email', { email })
                 .then(res => {
                     if (res.data == 'Wrong email information') {
                         alert('Wrong email information')
@@ -35,7 +35,7 @@ function GetNewPw() {
 
     }
     const SubmitCode = async () => {
-        await axios.post(dbUrl + 'check-verifyCode', { code })
+        await axios.post(dbUrl + '/check-verifyCode', { code })
             .then(res => {
                 if (res.data == 'success') {
                     setCheckCode(false)
