@@ -794,6 +794,7 @@
     height: 100%;
     display: flex;
     justify-content: center;
+    
   }
 
   .product1 {
@@ -956,7 +957,7 @@
   .shop_categories {
     font-size: 40%;
     width: 100%;
-    height: 5vh;
+   
 
   }
 
@@ -976,19 +977,19 @@
   }
 
   .categories_position {
-    width: 70%;
+    width: 80%;
     height: 100%;
-
+    display: flex;
+    
+    gap: 2em;
   }
 
   .categories {
 
     width: auto;
-    height: 20%;
-    display: flex;
-    justify-content: center;
     cursor: pointer;
     transition: 0.2s;
+   
   }
 
   .home_layout {
@@ -1039,5 +1040,11 @@
     background-repeat: no-repeat;
     background-size: 100%;
     cursor: pointer;
+  }
+  .cake_title {
+    font-size: 90%;
+  }
+  .cake_price{
+    font-size: 85%;
   }
 }
