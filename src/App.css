@@ -794,7 +794,7 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    
+
   }
 
   .product1 {
@@ -955,35 +955,35 @@
   }
 
   .shop_categories {
-    font-size: 40%;
+    font-size: 50%;
     width: 100%;
-   
+
 
   }
 
   .filter_cake {
-    width: 30%;
-    
-    
+    width: 25%;
+
+
   }
 
   .filter {
     height: 20%;
-    font-size: 40%;
+
   }
 
   .search {
-   
+
     height: 20%;
-    font-size: 40%;
-  
+
+
   }
 
   .categories_position {
-    width: 80%;
+    width: 75%;
     height: 100%;
     display: flex;
-    gap: 1em;
+    gap: 0.8em;
   }
 
   .categories {
@@ -991,7 +991,7 @@
     width: auto;
     cursor: pointer;
     transition: 0.2s;
-   
+
   }
 
   .home_layout {
@@ -1044,10 +1044,18 @@
     background-size: 100%;
     cursor: pointer;
   }
+
   .cake_title {
     font-size: 90%;
   }
-  .cake_price{
+
+  .cake_price {
     font-size: 85%;
+  }
+}
+@media screen and (max-width: 320px) {
+  .shop_categories {
+    font-size: 38%;
+    width: 100%;
   }
 }
