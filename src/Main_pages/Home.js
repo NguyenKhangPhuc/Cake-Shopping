@@ -115,6 +115,7 @@ function Home() {
         })
         setProductData(chooseResult)
         console.log(chooseResult)
+        setSearchArr([])
     }
     const goCakeDetail = (id) => {
         navigate(`/Home/${id}`)

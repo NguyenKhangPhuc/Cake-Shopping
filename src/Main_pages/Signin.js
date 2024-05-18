@@ -113,7 +113,7 @@ function Signin() {
             <div className='signin_form'>
               <label for='email'>Email*</label>
               <input type='email' id='email' className='email_input' disabled={disabled} placeholder='Email' onChange={(e) => setSignInEmail(e.target.value)} />
-              <label for='password'>Password</label>
+              <label for='password'>Password*</label>
               <input type='password' id='password' className='password_input' placeholder='Password' disabled={disabled} onChange={(e) => setSignInPW(e.target.value)} />
               <div className='forgot_pw' style={{ textDecoration: 'underline', color: 'blue', cursor: 'pointer', fontSize: '0.8em' }} onClick={() => navigate('/forget-pw')}>Forgot your password?</div>
               <button className='signin_button' onClick={(e) => loginAccount(e)} disabled={disabled}>Sign in</button>
@@ -128,11 +128,11 @@ function Signin() {
             <div className='signin_form'>
               <label for='username'>Username*</label>
               <input type='text' id='username' placeholder='Username' disabled={disabled} className='username_input' onChange={(e) => setUsername(e.target.value)} />
-              <label for='email'>Email</label>
+              <label for='email'>Email*</label>
               <input type='email' id='email' className='email_input' disabled={disabled} placeholder='Email' onChange={(e) => setSignUpEmail(e.target.value)} />
-              <label for='password'>Password</label>
+              <label for='password'>Password*</label>
               <input type='password' id='password' className='password_input' disabled={disabled} placeholder='Password' onChange={(e) => setSignUpPW(e.target.value)} />
-              {signUp == true && <label for='code'>Verification code to your gmail</label>}
+              {signUp == true && <label for='code'>Verification code to your gmail*</label>}
               {signUp == true && <input type='password' id='code' className='password_input' disabled={disabled} placeholder='Password' onChange={(e) => setCode(e.target.value)} />}
               {signUp == false ?
                 <button className='signin_button' onClick={(e) => sendCode(e)} disabled={disabled}>Submit</button>
