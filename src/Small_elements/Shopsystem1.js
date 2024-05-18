@@ -78,7 +78,7 @@ function Shopsystem1() {
     return (
         <>
             <div className='header'>
-                <div className='logo_position' style={{ backgroundImage: 'url(https://i.pinimg.com/564x/c5/b2/6c/c5b26c3b96dc289dd009d86d6809e7a6.jpg)' }}> </div>
+                <div className='logo_position' style={{ backgroundImage: 'url(https://cdn.discordapp.com/attachments/731476100521263259/1241348838179082340/Beige_Brown_Minimalist_Bakery_Cake_Logo_1.png?ex=6649dfb2&is=66488e32&hm=84799b4c65ea6a2d8ff3375bbaba3f7b228c44851fffaf07a506b7ab96ab2c7a&)' }}> </div>
                 <div className='shop_system'>
                     {shopSystem.map((features, index) => {
                         return (
