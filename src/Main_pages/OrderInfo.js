@@ -31,13 +31,13 @@ function OrderInfo() {
                 <div className='order_position'>
                     <div className='order_history_title'>Order history</div>
                     <div className='order_form'>
-                        <div className='form_text'>Tên người mua</div>
-                        <div className='form_text'>Sdt</div>
-                        <div className='form_text'>Địa chỉ</div>
-                        <div className='form_text'>Tên bánh</div>
-                        <div className='form_text'>Số lượng</div>
-                        <div className='form_text'>Giá</div>
-                        <div className='form_text'>Tổng giá</div>
+                        <div className='form_text'>Customer's name</div>
+                        <div className='form_text'>Phone Number</div>
+                        <div className='form_text'>Address</div>
+                        <div className='form_text'>Cake Name</div>
+                        <div className='form_text'>Quantity</div>
+                        <div className='form_text'>Price Each</div>
+                        <div className='form_text'>Total Price</div>
                     </div>
                     {list.map((ordersInfo, index) => {
                         return (
@@ -64,7 +64,7 @@ function OrderInfo() {
                             </div>
                         )
                     })}
-                    <div className='order_status'> Tình trạng : Đang được xử lý</div>
+                    <div className='order_status'> Status: Processing </div>
                 </div>
             </div>
             <BottomBar />

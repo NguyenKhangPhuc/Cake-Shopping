@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 2em;
 }
 
 .introduction_layout {
@@ -26,11 +27,11 @@
 .title {
     width: 100%;
     height: 5%;
-    font-size: 30px;
+    font-size: 200%;
     display: flex;
     justify-content: center;
     align-items: center;
-
+    font-weight: bold;
 }
 
 .intro_poster {
@@ -44,19 +45,27 @@
 
 .shop_introduction {
     width: 65%;
-    justify-content: center;
+
 
     height: 30%;
     display: flex;
     flex-direction: row;
-    align-items: center;
+
+
+}
+
+.introduction_text {
+    font-size: 100%;
+    width: 60%;
+    height: 100%;
 }
 
 .introduction_title {
-    width: 50%;
-    height: 55%;
+    width: 20%;
+    height: 100%;
     display: flex;
-    font-size: 30px;
+    font-size: 150%;
+    font-weight: bold;
 
 }
 
@@ -65,17 +74,24 @@
     height: 100%;
 
     display: flex;
-    flex-direction: column;
-    align-items: center;
+
+
     padding-bottom: 2.5%;
+
 }
 
 .contact_title {
-    width: 26%;
-    height: 95%;
+    width: 20%;
+    height: 100%;
     display: flex;
-    font-size: 30px;
+    font-size: 150%;
+    font-weight: bold;
+}
 
+.contact_text {
+    font-size: 100%;
+    width: 60%;
+    height: 100%;
 }
 
 .bottom_bar {
@@ -85,6 +101,7 @@
     display: flex;
     justify-content: center;
     font-family: 'Prompt';
+    font-size: 100%;
 }
 
 .bottom_shopsystem {
@@ -163,6 +180,8 @@
     .introduction_layout {
         width: 100%;
         height: 50%;
+        
+        
     }
 
     .intro_center {
@@ -171,13 +190,14 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        padding-top: 3em;
     }
 
     .title {
         padding-top: 0.5em;
         font-size: 200%;
         gap: 2em;
-        
+
         justify-content: center;
         display: flex;
         align-items: center;
@@ -187,7 +207,7 @@
     .intro_poster {
         width: 100%;
         height: 50%;
-        
+
         background-size: 100%;
         padding-bottom: 5em;
     }
@@ -198,12 +218,13 @@
         height: 50%;
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     .introduction_title {
         font-size: 90%;
         width: 100%;
-        
+
         display: flex;
         align-items: center;
         font-weight: bold;
@@ -212,7 +233,7 @@
     }
 
     .introduction_text {
-        font-size: 70%;
+        font-size: 85%;
 
         justify-content: center;
         width: 90%;
@@ -225,8 +246,9 @@
         height: 50%;
         display: flex;
         flex-direction: column;
-        padding-top: 8.5em;
+padding-top: 20%;
         padding-bottom: 20%;
+        align-items: center;
     }
 
     .contact_title {
@@ -244,7 +266,7 @@
     }
 
     .contact_text {
-        font-size: 70%;
+        font-size: 85%;
         width: 90%;
 
     }
@@ -289,5 +311,30 @@
         height: 100%;
         display: flex;
         justify-content: center;
+    }
+}
+
+@media screen and (max-width: 375px ) {
+    .contact_information {
+
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 50%;
+        padding-bottom: 20%;
+    }
+    .introduction_text {
+        font-size: 70%;
+
+        justify-content: center;
+        width: 90%;
+
+    }
+    .contact_text{
+        font-size: 70%;
+
+        justify-content: center;
+        width: 90%;
     }
 }

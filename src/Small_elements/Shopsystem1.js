@@ -7,11 +7,11 @@ import { dbUrl } from '../Main_pages/Home'
 function Shopsystem1() {
     const shopSystem = [
         { title: 'Shop', link: '' },
-        { title: 'Giới Thiệu', link: 'Introduction' },
-        { title: 'Giao Hàng', link: 'Delivery' },
-        { title: 'Thanh Toán', link: 'Payment' },
-        { title: 'Đăng nhập', link: 'Signin' },
-        { title: 'Giỏ hàng 🛒' }
+        { title: 'Introduction', link: 'Introduction' },
+        { title: 'Delivery', link: 'Delivery' },
+        { title: 'Payment Methods', link: 'Payment' },
+        { title: 'Sign in', link: 'Signin' },
+        { title: 'Cart 🛒' }
     ]
     let [cartList, setCartList] = useState([])
     let { id, setId } = useContext(Container)
@@ -110,12 +110,12 @@ function Shopsystem1() {
                         })}
 
                         <button className="Btn" onClick={() => goOrder()}>
-                            Thanh toán
+                            Check out
                             <svg viewBox="0 0 576 512" className="svgIcon"><path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path></svg>
                         </button>
 
                         <button className="Btn" onClick={() => goOrdersInfo()}>
-                            xem đơn hàng của bạn
+                            View your orders
                             <svg viewBox="0 0 576 512" className="svgIcon"><path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path></svg>
                         </button>
 
@@ -131,11 +131,11 @@ function Shopsystem1() {
 
     )
 }
-const MobileHeader = ({ shopSystem, handleShopSystem, showShopsystem, setShowShopsystem, showCart, setShowCart, cartList, goDetailFromCart, handleDelete, goOrder, goOrdersInfo }) => {
+ const MobileHeader = ({ shopSystem, handleShopSystem, showShopsystem, setShowShopsystem, showCart, setShowCart, cartList, goDetailFromCart, handleDelete, goOrder, goOrdersInfo }) => {
     return (
         <div className='mobile_header'>
             <div className='logo_position' style={{ backgroundImage: 'url(https://i.pinimg.com/564x/c5/b2/6c/c5b26c3b96dc289dd009d86d6809e7a6.jpg)' }}> </div>
-            {showShopsystem == false && <div className='hamburger_icon' onClick={() => setShowShopsystem(!showShopsystem)}>☰</div>}
+            <div className='hamburger_icon' onClick={() => setShowShopsystem(!showShopsystem)}>☰</div>
             {showShopsystem == true &&
                 <div className='shop_system_mobile'>
                     {shopSystem.map((features, index) => {
@@ -145,7 +145,7 @@ const MobileHeader = ({ shopSystem, handleShopSystem, showShopsystem, setShowSho
                             </div>
                         )
                     })}
-                    <div className='off_shopsytem_mobile' onClick={() => setShowShopsystem(false)}>x</div>
+
                 </div>}
 
             {showCart == true ?
@@ -169,12 +169,12 @@ const MobileHeader = ({ shopSystem, handleShopSystem, showShopsystem, setShowSho
                     })}
 
                     <button className="Btn" onClick={() => goOrder()}>
-                        Thanh toán
+                        Check out
                         <svg viewBox="0 0 576 512" className="svgIcon"><path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path></svg>
                     </button>
 
                     <button className="Btn" onClick={() => goOrdersInfo()}>
-                        xem đơn hàng của bạn
+                        View your orders
                         <svg viewBox="0 0 576 512" className="svgIcon"><path d="M512 80c8.8 0 16 7.2 16 16v32H48V96c0-8.8 7.2-16 16-16H512zm16 144V416c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V224H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm56 304c-13.3 0-24 10.7-24 24s10.7 24 24 24h48c13.3 0 24-10.7 24-24s-10.7-24-24-24H120zm128 0c-13.3 0-24 10.7-24 24s10.7 24 24 24H360c13.3 0 24-10.7 24-24s-10.7-24-24-24H248z"></path></svg>
                     </button>
 

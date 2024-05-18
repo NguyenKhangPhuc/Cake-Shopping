@@ -6,9 +6,9 @@ function BottomBar() {
     const navigate = useNavigate()
   const shopSystem = [
     { title: 'Shop', link: '' },
-    { title: 'Giới Thiệu', link: 'Introduction' },
-    { title: 'Giao Hàng', link: 'Delivery' },
-    { title: 'Thanh Toán', link: 'Payment' },
+    { title: 'Introduction', link: 'Introduction' },
+    { title: 'Delivery', link: 'Delivery' },
+    { title: 'Payment Methods', link: 'Payment' },
 
   ]
   const handleShopSystem = (page) => {

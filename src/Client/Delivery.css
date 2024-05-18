@@ -8,7 +8,7 @@
 
 .delivery_lay_1 {
     width: 100%;
-    height: 100vh;
+    height: 80vh;
 
     display: flex;
     flex-direction: column;
@@ -28,33 +28,34 @@
 .delivery_title {
     width: 65%;
     height: 5%;
-    font-size: 30px;
+    font-size: 200%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 2%;
     padding-bottom: 2%;
     border-bottom: 1px solid grey;
+    font-weight: bold;
 }
 
 .delivery_policies {
     width: 65%;
     height: 50%;
 
-    font-size: 18px;
+    font-size: 110%;
     padding-top: 1%;
     padding-bottom: 2%;
 }
 
 .delivery_helps {
     width: 65%;
-    height: 17vh;
+    height: 20vh;
     background-color: #141b40;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 19px;
+    font-size: 120%;
     color: #ded5c3;
     border-radius: 30px;
     margin-bottom: 5em;
@@ -73,7 +74,8 @@
 
         width: 100%;
         height: auto;
-        padding-bottom: 4em;
+        padding-bottom: 20%;
+        padding-top: 20%;
     }
 
     .delivery_center {
@@ -86,7 +88,7 @@
     }
 
     .delivery_title {
-        font-size: 150%;
+        font-size: 200%;
         width: 85%;
         height: 10%;
     }
@@ -108,7 +110,15 @@
         align-items: center;
         font-size: 70%;
         color: #ded5c3;
-        border-radius: 30px;
-        margin-bottom: 5em;
+        border-radius: 0;
+
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .delivery_title {
+        font-size: 200%;
+        width: 100%;
+        height: 10%;
     }
 }

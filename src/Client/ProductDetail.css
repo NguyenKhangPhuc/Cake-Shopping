@@ -204,7 +204,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        
         align-items: center;
     }
 
@@ -289,4 +289,5 @@
     .addtocart_button {
         height: 5vh;
     }
+    
 }

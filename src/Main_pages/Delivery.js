@@ -8,23 +8,23 @@ function Delivery() {
     <div className='delivery_big_lay'>
       <Shopsystem1 />
       <div className='delivery_lay_1'>
-        
+
         <div className='delivery_center'>
-          <div className='delivery_title'> CHÍNH SÁCH GIAO HÀNG</div>
+          <div className='delivery_title'>Delivery Policies</div>
           <div className='delivery_policies'>
-            <p>– Chúng tôi giao hàng tận nơi có thu phí. Chi phí giao hàng sẽ được thông báo khi quý khách nhập chính xác địa chỉ nhận hàng trong lúc đặt hàng.</p>
-            <p>– Chúng tôi sẽ cố gắng giao đúng tầm khung giờ có trừ hao 60-90 phút mà quý khách yêu cầu. Tuy nhiên, vì các lí do khách quan như thời tiết xấu, kẹt xe, sự cố trên đường, … nên shipper có thể đến trễ hơn. Chúng tôi sẽ thông báo ngay khi có thể.</p>
-            <p>– Trước khi giao chúng tôi sẽ gọi xác nhận đơn hàng, gọi được shipper mới giao đi, mọi thay đổi và cập nhật đơn đặt hàng vui lòng cung cấp ở cuộc gọi này để được hỗ trợ nhanh chóng.</p>
-            <p> – Quý khách hàng vui lòng giữ liên lạc vì shipper khi giao đến chỉ có thể chờ tối đa 20 phút.</p>
-            <p>– Quý khách hàng nhận bánh nếu chưa ăn liền thì cần bảo quản ở tủ lạnh ngăn mát. Bánh lạnh nếu để quá lâu ở nhiệt độ phòng sẽ bị chảy và mất kết cấu ban đầu.</p>
-            <p>– Khi nhận bánh, vui lòng kiểm tra bánh trước khi nhận, nếu bánh có dấu hiệu đổ vỡ thì TUYỆT ĐỐI KHÔNG NHẬN bánh và liên hệ Hotline 1800 8287 để được hỗ trợ xử lý ngay lập tức.
+            <p>– We offer home delivery services for a fee. The delivery cost will be provided once you enter the accurate delivery address during the order process.</p>
+            <p>– We strive to deliver within the requested time frame, allowing for a 60-90 minute buffer. However, due to unforeseen circumstances such as bad weather, traffic jams, or road incidents, the delivery might be delayed. We will notify you as soon as possible in such cases.</p>
+            <p>– We will call to confirm your order before dispatching it, and only when the shipper is available for delivery. Please provide any changes or updates to your order during this call for prompt assistance.</p>
+            <p> – Please keep your phone available as the shipper can only wait for a maximum of 20 minutes upon arrival.</p>
+            <p>– If you do not consume the cake immediately, please store it in the refrigerator. Cold cakes left at room temperature for too long may melt and lose their original texture.</p>
+            <p>– Upon receiving your cake, please inspect it before accepting. If the cake shows any signs of damage, DO NOT ACCEPT the cake and contact our Hotline at 1800 8287 for immediate assistance.
             </p>
-           
+
           </div>
-          
+
         </div>
       </div>
-      <ContactBoard/>
+      <ContactBoard />
       <BottomBar />
     </div>
   )

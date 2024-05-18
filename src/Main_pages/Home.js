@@ -96,6 +96,7 @@ function Home() {
     const offSearching = () => {
         setShowSearch(false)
         setProductData(defaultCake)
+        setSearchArr([])
     }
     const handleSearching = (inputValue) => {
         const searchFilter = defaultCake.filter((products, index) => {
@@ -133,6 +134,7 @@ function Home() {
                     </div>
                 </div>
             </div>
+            <MobileSearch handleSearching={handleSearching} offSearching={offSearching} searchArr={searchArr} chooseSearchResult={chooseSearchResult} />
             <div className='shop_categories'>
                 <div className='categories_position'>
                     {shopCategories.map((categories, index) => {
@@ -144,8 +146,8 @@ function Home() {
                 </div>
 
                 <div className='filter_cake'>
-                    <div className='filter' onClick={() => handleShowFilter()}>Lọc</div>
-                    <div className='search' onClick={() => handleShowSearch()}>Tìm kiếm </div>
+                    <div className='filter' onClick={() => handleShowFilter()}>Filter</div>
+                    <div className='search' onClick={() => handleShowSearch()}>Searching </div>
                 </div>
             </div>
             {showFilter == true ?
@@ -201,6 +203,26 @@ function Home() {
                 })}
             </div>
             <BottomBar />
+        </div>
+    )
+}
+
+const MobileSearch = ({ handleSearching, offSearching, searchArr, chooseSearchResult }) => {
+    return (
+        <div className='mobile_search_place'>
+            <div className='search_position_mobile'>
+
+                <svg className="mobile_icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+                <input className='search_input_mobile' placeholder='Searching' onChange={(e) => handleSearching(e.target.value)} />
+                <div className='off_input_mobile' onClick={() => offSearching()}>ⓧ</div>
+            </div>
+            <div className='search_result_mobile' >
+                {searchArr.map((products, index) => {
+                    return (
+                        <div className='mobile_results' onClick={() => chooseSearchResult(products.cake_title)}>{products.cake_title}</div>
+                    )
+                })}
+            </div>
         </div>
     )
 }

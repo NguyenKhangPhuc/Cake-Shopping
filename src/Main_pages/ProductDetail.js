@@ -9,6 +9,7 @@ import BottomBar from '../Small_elements/BottomBar'
 import { Container } from '../App'
 import { useNavigate } from 'react-router-dom'
 import { dbUrl } from './Home'
+import { MobileHeader } from '../Small_elements/Shopsystem1'
 function ProductDetail() {
     const navigate = useNavigate()
     const { cakeId } = useParams()
@@ -46,7 +47,6 @@ function ProductDetail() {
     }
     const chooseImg = (imgIndex, src) => {
         setCheckSmallImg(imgIndex)
-
         setBigImg(src)
     }
     const handleChooseSize = (sizeIn) => {

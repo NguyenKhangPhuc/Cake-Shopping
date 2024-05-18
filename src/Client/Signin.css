@@ -20,7 +20,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30px;
+  font-size: 150%;
 }
 
 .username_input {
@@ -28,7 +28,7 @@
   height: 10%;
   outline: none;
   border: 0.1px solid grey;
-  font-size: 20px;
+  font-size: 100%;
 }
 
 .signin_form {
@@ -38,6 +38,7 @@
   display: flex;
   flex-direction: column;
   gap: 1em;
+
 }
 
 .email_input {
@@ -45,7 +46,7 @@
   height: 10%;
   outline: none;
   border: 0.1px solid grey;
-  font-size: 20px;
+ 
 }
 
 .password_input {
@@ -53,7 +54,8 @@
   height: 10%;
   outline: none;
   border: 0.1px solid grey;
-  font-size: 20px;
+
+
 }
 
 .signin_button {
@@ -65,6 +67,7 @@
   color: white;
   transition: 0.3s;
   cursor: pointer;
+
 }
 
 .signin_button:hover {
@@ -88,6 +91,7 @@
   border: 0.1px solid grey;
   color: black;
   cursor: pointer;
+  
 }
 
 .create_button:hover {
@@ -99,6 +103,7 @@
   color: #15466e;
   cursor: pointer;
   transition: 0.3s;
+
 }
 
 .signout_button:hover {
@@ -106,9 +111,10 @@
 }
 
 .getnewpw_layout {
-  width: 100vw;
+  width: 99vw;
   height: auto;
   font-family: 'Prompt';
+ 
 }
 
 .getpw_center {
@@ -133,7 +139,7 @@
 
 .reset_pw_title {
   height: 10vh;
-  font-size: 2em;
+  font-size: 200%;
   font-weight: bold;
   font-style: italic;
 }

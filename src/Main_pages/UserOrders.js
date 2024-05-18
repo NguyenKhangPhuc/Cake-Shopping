@@ -54,19 +54,19 @@ function UserOrders() {
             <div className='user_form'>
 
                 <div className='form'>
-                    <div className='order_titles'>Địa chỉ giao hàng*</div>
-                    <label for='fullName'>Họ và tên *</label>
+                    <div className='order_titles'>Delivery address*</div>
+                    <label for='fullName'>Full Name *</label>
                     <input type='text' id='fullName' className='info_input' placeholder='Full Name' onChange={(e) => setName(e.target.value)} />
-                    <label for='Age'>Tuổi</label>
+                    <label for='Age'>Age</label>
                     <input type='number' id='Age' className='info_input' placeholder='Age' onChange={(e) => setAge(e.target.value)} />
-                    <label for='phoneNumber'> Số điện thoại *</label>
+                    <label for='phoneNumber'> Phone numbers *</label>
                     <input type='text' id='phoneNumber' className='info_input' placeholder='Phone numbers' onChange={(e) => setPhone(e.target.value)} />
-                    <label for='address' >Địa chỉ *</label>
+                    <label for='address' >Adress *</label>
                     <input type='text' id='address' className='info_input' placeholder='Address' onChange={(e) => setAddress(e.target.value)} />
                     <div className='pay_btn_position'>
                         <button onClick={() => submitInformation()}>
                             <span class="box">
-                                Thanh toán!
+                                Check out!
                             </span>
                         </button>
                     </div>
