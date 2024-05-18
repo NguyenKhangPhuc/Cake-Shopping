@@ -23,10 +23,10 @@ function Home() {
     let product
     const shopCategories = [
         { title: "All", filter_sign: "All" },
-        { title: "Bán Chạy Nhất", filter_sign: "BestSeller" },
-        { title: "Phải Thử", filter_sign: "MustTry" },
-        { title: "Sản Phẩm Mới", filter_sign: "New" },
-        { title: "Đang Hot", filter_sign: "Hot" }
+        { title: "Best Seller", filter_sign: "BestSeller" },
+        { title: "Must Try", filter_sign: "MustTry" },
+        { title: "New Arrivals", filter_sign: "New" },
+        { title: "Hot", filter_sign: "Hot" }
     ]
     const sorting = [
         { title: "Default", filter_sign: "All" },
