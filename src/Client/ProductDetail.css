@@ -290,7 +290,7 @@
     .represent_img {
         width: 100%;
         height: 50vh;
-        background-size: 100% ;
+        background-size: 100%;
     }
 
     .introduction_place_detail {
@@ -343,9 +343,26 @@
         height: auto;
         display: flex;
         flex-wrap: wrap;
-        
+
     }
 
+    .recommended_cake {
+        width: 45%;
+        height: 37vh;
+        background-size: 100% 86%;
+
+        background-position: top;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        transition: 0.2s;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 380px) {
     .recommended_cake {
         width: 45%;
         height: 37vh;
