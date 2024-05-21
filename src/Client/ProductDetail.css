@@ -212,8 +212,8 @@
 
 .recommended_cake {
     width: 20%;
-    height: 40vh;
-    background-size: 100% 85%;
+    height: 35vh;
+    background-size: 100% 82%;
 
     background-position: top;
     background-repeat: no-repeat;
@@ -223,12 +223,13 @@
     transition: 0.2s;
     border: none;
     cursor: pointer;
+    padding-bottom: 2%;
 }
 
 .recommended_title {
     font-size: 150%;
     font-weight: bold;
-    padding-bottom: 2%;
+    padding-bottom: 3%;
 }
 
 .cakes_position {
@@ -347,8 +348,8 @@
 
     .recommended_cake {
         width: 45%;
-        height: 40vh;
-        background-size: 100% 85%;
+        height: 37vh;
+        background-size: 100% 82%;
 
         background-position: top;
         background-repeat: no-repeat;

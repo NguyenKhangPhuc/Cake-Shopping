@@ -4,16 +4,16 @@ import { useState } from 'react'
 
 function BottomBar() {
     const navigate = useNavigate()
-  const shopSystem = [
-    { title: 'Shop', link: '' },
-    { title: 'Introduction', link: 'Introduction' },
-    { title: 'Delivery', link: 'Delivery' },
-    { title: 'Payment Methods', link: 'Payment' },
+    const shopSystem = [
+        { title: 'Shop', link: '' },
+        { title: 'Introduction', link: 'Introduction' },
+        { title: 'Delivery', link: 'Delivery' },
+        { title: 'Payment Methods', link: 'Payment' },
 
-  ]
-  const handleShopSystem = (page) => {
-    navigate(`/${page}`)
-  }
+    ]
+    const handleShopSystem = (page) => {
+        navigate(`/${page}`)
+    }
     return (
         <div className='bottom_bar'>
             <div className='bottom_shopsystem'>
@@ -26,9 +26,9 @@ function BottomBar() {
                 </div>
                 <div className='bottom_provided_text'>© 2024 by The Cake</div>
                 <div className='application'>
-                    <img src='https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg' className='fb_logo'></img>
-                    <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/2048px-Instagram_logo_2022.svg.png' className='insta_logo' />
-                    <img src='https://cdn.pixabay.com/photo/2022/02/09/08/24/tiktok-7002866_960_720.png' className='tiktok_logo' />
+                    <img src='https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/facebook-app-round-white-icon.png' className='fb_logo'></img>
+                    <img src='https://upload.wikimedia.org/wikipedia/commons/2/28/Instagram_logo.png' className='insta_logo' />
+                    <img src='https://seeklogo.com/images/T/tiktok-share-icon-black-logo-29FFD062A0-seeklogo.com.png' className='tiktok_logo' />
                 </div>
             </div>
         </div>

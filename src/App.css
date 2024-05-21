@@ -42,11 +42,11 @@
 }
 
 .logo_position {
-  width: 20%;
+  width: 14%;
   height: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100% 90%;
+  background-size: 100% ;
 }
 
 .shop_system {

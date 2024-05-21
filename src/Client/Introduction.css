@@ -145,10 +145,12 @@
     width: 5%;
     transition: 0.3s;
     cursor: pointer;
+   
 }
 
 .fb_logo:hover {
     width: 5.5%;
+    
 }
 
 .insta_logo {
@@ -165,6 +167,8 @@
     width: 5%;
     transition: 0.3s;
     cursor: pointer;
+    background-color: aliceblue;
+    border-radius: 10px;
 }
 
 .tiktok_logo:hover {

@@ -10,6 +10,7 @@ import { Container } from '../App'
 import { useNavigate } from 'react-router-dom'
 import { dbUrl } from './Home'
 import { MobileHeader } from '../Small_elements/Shopsystem1'
+
 function ProductDetail() {
     const navigate = useNavigate()
     const { cakeId } = useParams()
@@ -28,17 +29,19 @@ function ProductDetail() {
     useEffect(() => {
         handleGetApi()
         console.log(id)
-        axios.post(dbUrl + '/get-list', { id })
+
+    }, [])
+    const handleGetApi = async () => {
+        await axios.post(dbUrl + '/get-list', { id })
             .then(result => {
                 console.log(result)
-                setListStorage(result.data.list)
+                if (result) {
+                    setListStorage(result?.data.list)
+                }
             })
             .catch(err => {
                 console.log(err)
             })
-    }, [])
-    const handleGetApi = async () => {
-
         product = await axios.get(dbUrl)
         const chosenProduct = product.data.filter((cakes, index) => {
             return cakes._id == cakeId
@@ -64,6 +67,7 @@ function ProductDetail() {
             }
         })
         setRecommendList(recommendedCake)
+
     }
     const chooseImg = (imgIndex, src) => {
         setCheckSmallImg(imgIndex)
@@ -77,17 +81,27 @@ function ProductDetail() {
         console.log(productData)
         if (!id) {
             navigate('/Signin')
-        } else if (id && listStorage.length < 6) {
+        } else if (id && listStorage.length < 5) {
             listStorage = [...listStorage, productData]
             setListStorage(listStorage)
             console.log(listStorage)
             await axios.post(dbUrl + '/update-list', { id, listStorage })
                 .then(result => {
                     console.log(result)
+                    if(result){
+                        navigate('/')
+                    }
                 })
                 .catch(err => console.log(err))
+        } else if (listStorage.length >= 5) {
+            alert('Full of space in the cart !')
         }
+        console.log(listStorage)
 
+    }
+    const goCakeDetails = (id) => {
+        navigate(`/Home/${id}`)
+        window.location.reload()
     }
     return (
         <div className='productdetail_layout'>
@@ -147,7 +161,7 @@ function ProductDetail() {
                 <div className='cakes_position'>
                     {recommendList?.map((cakes, index) => {
                         return (
-                            <div className='recommended_cake' onMouseOver={() => setVerifyNum(index)} onMouseLeave={() => setVerifyNum(null)} style={{ backgroundImage: `url(${verifyNum == index ? cakes.img_src[1] : cakes.img_src[0]}})` }} onClick={() => navigate(`/Home/${cakes._id}`)}>
+                            <div className='recommended_cake' onMouseOver={() => setVerifyNum(index)} onMouseLeave={() => setVerifyNum(null)} style={{ backgroundImage: `url(${verifyNum == index ? cakes.img_src[1] : cakes.img_src[0]}})` }} onClick={() => goCakeDetails(cakes._id)}>
                                 <div className='cake_title' >{cakes.cake_title}</div>
                                 {verifyNum == index ? <div className='showmore_text'>Show more</div> : <div className='cake_price'>{cakes.price} VND</div>}</div>
 
