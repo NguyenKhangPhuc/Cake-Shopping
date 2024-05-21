@@ -853,7 +853,7 @@
   .product1 {
     width: 45%;
     height: 35vh;
-    background-size: 100% 80%;
+    background-size: 100% 85%;
 
     background-position: top;
     background-repeat: no-repeat;
@@ -867,7 +867,7 @@
   .product2 {
     width: 45%;
     height: 35vh;
-    background-size: 100% 80%;
+    background-size: 100% 85%;
 
     background-position: top;
     background-repeat: no-repeat;
@@ -880,7 +880,7 @@
   .product3 {
     width: 45%;
     height: 35vh;
-    background-size: 100% 80%;
+    background-size: 100% 85%;
 
     background-position: top;
     background-repeat: no-repeat;
@@ -893,7 +893,7 @@
   .product4 {
     width: 45%;
     height: 35vh;
-    background-size: 100% 80%;
+    background-size: 100% 85%;
 
     background-position: top;
     background-repeat: no-repeat;
@@ -906,7 +906,7 @@
   .product5 {
     width: 45%;
     height: 35vh;
-    background-size: 100% 80%;
+    background-size: 100% 85%;
 
     background-position: top;
     background-repeat: no-repeat;
@@ -919,7 +919,7 @@
   .product6 {
     width: 45%;
     height: 35vh;
-    background-size: 100% 80%;
+    background-size: 100% 85%;
 
     background-position: top;
     background-repeat: no-repeat;
@@ -932,7 +932,7 @@
   .product7 {
     width: 45%;
     height: 35vh;
-    background-size: 100% 80%;
+    background-size: 100% 85%;
 
     background-position: top;
     background-repeat: no-repeat;
@@ -945,7 +945,7 @@
   .product8 {
     width: 45%;
     height: 35vh;
-    background-size: 100% 80%;
+    background-size: 100% 85%;
 
     background-position: top;
     background-repeat: no-repeat;
@@ -958,7 +958,7 @@
   .product9 {
     width: 45%;
     height: 35vh;
-    background-size: 100% 80%;
+    background-size: 100% 85%;
 
     background-position: top;
     background-repeat: no-repeat;
@@ -971,7 +971,7 @@
   .product10 {
     width: 45%;
     height: 35vh;
-    background-size: 100% 80%;
+    background-size: 100% 85%;
 
     background-position: top;
     background-repeat: no-repeat;
@@ -984,7 +984,7 @@
   .product11 {
     width: 45%;
     height: 35vh;
-    background-size: 100% 80%;
+    background-size: 100% 85%;
 
     background-position: top;
     background-repeat: no-repeat;
@@ -997,7 +997,7 @@
   .product12 {
     width: 45%;
     height: 35vh;
-    background-size: 100% 80%;
+    background-size: 100% 85%;
 
     background-position: top;
     background-repeat: no-repeat;
@@ -1103,7 +1103,8 @@
   }
 
   .cake_title {
-    font-size: 90%;
+    font-size: 92%;
+    font-weight: bold;
   }
 
   .cake_price {
