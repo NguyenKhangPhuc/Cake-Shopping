@@ -198,13 +198,55 @@
     border-bottom: 1px solid black;
 }
 
+.recommended_cake_position {
+    width: 100%;
+    height: auto;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 3%;
+}
+
+.recommended_cake {
+    width: 20%;
+    height: 40vh;
+    background-size: 100% 85%;
+
+    background-position: top;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: 0.2s;
+    border: none;
+    cursor: pointer;
+}
+
+.recommended_title {
+    font-size: 150%;
+    font-weight: bold;
+    padding-bottom: 2%;
+}
+
+.cakes_position {
+    width: 75%;
+    height: auto;
+
+    display: flex;
+    justify-content: space-around;
+
+}
+
 @media screen and (max-width: 430px) {
     .productdetail_layout {
         height: auto;
         width: 100%;
         display: flex;
         flex-direction: column;
-        
+
         align-items: center;
     }
 
@@ -247,7 +289,7 @@
     .represent_img {
         width: 100%;
         height: 50vh;
-        background-size: 100% 100%;
+        background-size: 100% ;
     }
 
     .introduction_place_detail {
@@ -289,5 +331,32 @@
     .addtocart_button {
         height: 5vh;
     }
-    
+
+    .recommended_cake_position {
+        width: 100%;
+        height: auto;
+    }
+
+    .cakes_position {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+
+    .recommended_cake {
+        width: 45%;
+        height: 40vh;
+        background-size: 100% 85%;
+
+        background-position: top;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        transition: 0.2s;
+        border: none;
+        cursor: pointer;
+    }
 }

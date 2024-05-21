@@ -42,11 +42,11 @@
 }
 
 .logo_position {
-  width: 8%;
-  height: 70%;
+  width: 20%;
+  height: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100% 100%;
+  background-size: 100% 90%;
 }
 
 .shop_system {
@@ -764,7 +764,7 @@
     height: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100% 87%;
+    background-size: 100% 70%;
 
   }
 
@@ -839,7 +839,7 @@
 
     gap: 1em;
     z-index: 10000;
-    
+
   }
 
   .product_position {

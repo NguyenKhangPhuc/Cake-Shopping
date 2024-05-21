@@ -20,7 +20,11 @@ function ProductDetail() {
     const [sizeIndex, setSizeIndex] = useState(0)
     let { id, setId } = useContext(Container)
     let [listStorage, setListStorage] = useState([])
+    let [cakeIndex, setCakeIndex] = useState(null)
+    const [recommendList, setRecommendList] = useState([])
+    const [verifyNum, setVerifyNum] = useState(null)
     let product
+    let recommendedCake
     useEffect(() => {
         handleGetApi()
         console.log(id)
@@ -36,14 +40,30 @@ function ProductDetail() {
     const handleGetApi = async () => {
 
         product = await axios.get(dbUrl)
-
         const chosenProduct = product.data.filter((cakes, index) => {
             return cakes._id == cakeId
         })
-
         setProductData(chosenProduct)
         setListImgs(chosenProduct[0].img_src)
         setBigImg(chosenProduct[0].img_src[0])
+        product.data.map((cakes, index) => {
+            if (cakes._id == cakeId) {
+                cakeIndex = index
+                setCakeIndex(cakeIndex)
+
+            } else {
+                return cakes
+            }
+        })
+        console.log(cakeIndex)
+        recommendedCake = product.data.filter((recommendCake, index) => {
+            if (cakeIndex > 3) {
+                return index < cakeIndex && index >= cakeIndex - 4
+            } else if (cakeIndex <= 3) {
+                return index > cakeIndex && index <= cakeIndex + 4
+            }
+        })
+        setRecommendList(recommendedCake)
     }
     const chooseImg = (imgIndex, src) => {
         setCheckSmallImg(imgIndex)
@@ -102,13 +122,13 @@ function ProductDetail() {
                                 <div className='size_des'>{cake.size[sizeIndex].size_des}</div>
                                 <div className='size_price'>{cake.size[sizeIndex].sizePrice}</div>
                             </div>
-                            <button className='addtocart_button' onClick={() => addToCart()}>Thêm vào giỏ hàng 🛒</button>
+                            <button className='addtocart_button' onClick={() => addToCart()}>Add to cart 🛒</button>
                         </div>
                     )
                 })}
             </div>
             <div className='cake_description'>
-                <div className='des_title'>Mô tả</div>
+                <div className='des_title'>Description</div>
                 {productData?.map((cake, index) => {
                     return (
                         <div className='description_place'>{
@@ -121,6 +141,20 @@ function ProductDetail() {
                         </div>
                     )
                 })}
+            </div>
+            <div className='recommended_cake_position'>
+                <div className='recommended_title'>Similar Products</div>
+                <div className='cakes_position'>
+                    {recommendList?.map((cakes, index) => {
+                        return (
+                            <div className='recommended_cake' onMouseOver={() => setVerifyNum(index)} onMouseLeave={() => setVerifyNum(null)} style={{ backgroundImage: `url(${verifyNum == index ? cakes.img_src[1] : cakes.img_src[0]}})` }} onClick={() => navigate(`/Home/${cakes._id}`)}>
+                                <div className='cake_title' >{cakes.cake_title}</div>
+                                {verifyNum == index ? <div className='showmore_text'>Show more</div> : <div className='cake_price'>{cakes.price} VND</div>}</div>
+
+                        )
+                    })}
+                </div>
+
             </div>
             <BottomBar />
         </div>
