@@ -1,7 +1,9 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-
+import fbLogo from '../Imgs/fb-logo.png'
+import insLogo from '../Imgs/ins-logo.png'
+import tiktokLogo from '../Imgs/tiktok-logo.png'
 function BottomBar() {
     const navigate = useNavigate()
     const shopSystem = [

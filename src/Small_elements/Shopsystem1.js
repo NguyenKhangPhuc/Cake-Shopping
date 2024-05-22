@@ -4,6 +4,7 @@ import { Container } from '../App'
 import { useEffect } from 'react'
 import axios from 'axios'
 import { dbUrl } from '../Main_pages/Home'
+import img1 from '../Imgs/Logo imgs.png'
 function Shopsystem1() {
     const shopSystem = [
         { title: 'Shop', link: '' },
@@ -78,7 +79,7 @@ function Shopsystem1() {
     return (
         <>
             <div className='header'>
-                <div className='logo_position' style={{ backgroundImage: 'url(https://cdn.discordapp.com/attachments/731476100521263259/1241695911520768020/image.png?ex=664d1d2e&is=664bcbae&hm=3f804c7c7ac5c8d5ca990fdca8a90ed45bdc7a0464dd2bf0a409b58abb47cbc1&)' }}> </div>
+                <div className='logo_position' style={{ backgroundImage: `url("${img1}")` }}> </div>
                 <div className='shop_system'>
                     {shopSystem.map((features, index) => {
                         return (
@@ -134,7 +135,7 @@ function Shopsystem1() {
 const MobileHeader = ({ shopSystem, handleShopSystem, showShopsystem, setShowShopsystem, showCart, setShowCart, cartList, goDetailFromCart, handleDelete, goOrder, goOrdersInfo }) => {
     return (
         <div className='mobile_header'>
-            <div className='logo_position' style={{ backgroundImage: 'url(https://cdn.discordapp.com/attachments/731476100521263259/1241695911520768020/image.png?ex=664d1d2e&is=664bcbae&hm=3f804c7c7ac5c8d5ca990fdca8a90ed45bdc7a0464dd2bf0a409b58abb47cbc1&)' }}> </div>
+            <div className='logo_position' style={{ backgroundImage: `url("${img1}")` }}> </div>
             <div className='hamburger_icon' onClick={() => setShowShopsystem(!showShopsystem)}>☰</div>
             {showShopsystem == true &&
                 <div className='shop_system_mobile'>
