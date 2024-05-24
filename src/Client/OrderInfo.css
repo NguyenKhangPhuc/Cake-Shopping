@@ -33,13 +33,15 @@
     height: auto;
     display: flex;
     padding: 10px 0 10px 0;
-    border: 1px solid black;
-
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
 }
 
 .form_text {
     width: 8vw;
     border-left: 1px solid black;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -90,7 +92,7 @@
         font-size: 150%;
     }
 
-    .order_form {}
+
 
     .form_text {
         width: 20%;
@@ -99,21 +101,19 @@
         justify-content: center;
         align-items: center;
 
-        font-size: 40%;
+        font-size: 20%;
         font-weight: bold;
     }
 
-    .Orders {}
-
     .user_order_info {
         border-right: 0.1px solid black;
-        width: 15%;
-        font-size: 40%;
+        width: 17%;
+        font-size: 30%;
     }
 
     .user_order_cakes {
-
+        font-size: 30%;
         width: 14%;
-        font-size: 40%;
+
     }
 }
