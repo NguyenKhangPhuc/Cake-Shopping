@@ -71,7 +71,24 @@ app.post('/send-code', (req, res) => {
 
     UserModel.findOne({ signUpEmail })
         .then(user => {
-            res.json(user)
+            if (!user) {
+                var mailOptions1 = {
+                    from: 'nguyenkhangphuc2005@gmail.com',
+                    to: `${signUpEmail}`,
+                    subject: 'Your sign up code is here',
+                    text: `${signUpCode}`
+                }
+                transporter.sendMail(mailOptions1, function (error, info) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        console.log('Email sent: ' + info.response);
+                        res.json(result)
+                    }
+                })
+            } else {
+                res.json('Email already in use')
+            }
 
         })
         .catch(err => console.log(err))
