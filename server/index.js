@@ -52,8 +52,8 @@ var transporter = nodemailer.createTransport({
 
 
 
-app.get('/', async (req, res) => {
-    await ProductModel.find({})
+app.get('/',  (req, res) => {
+     ProductModel.find({})
         .then((product) => {
             res.status(200).json(product)
         })
@@ -83,13 +83,13 @@ app.post('/send-code', (req, res) => {
 })
 
 
-app.post('/signup', async (req, res) => {
+app.post('/signup',  (req, res) => {
     const { username, signUpEmail, signUpPW, code } = req.body
     if (code == signUpCode) {
-        await UserModel.findOne({ signUpEmail })
-            .then(async user => {
+         UserModel.findOne({ signUpEmail })
+            .then( user => {
                 if (!user) {
-                    await UserModel.create({
+                     UserModel.create({
                         ...req.body,
                         signUpPW: md5Hash.default(signUpPW)
                     })
@@ -105,11 +105,11 @@ app.post('/signup', async (req, res) => {
 })
 
 
-app.post('/login', async (req, res) => {
+app.post('/login',  (req, res) => {
     let { signInEmail, signInPW } = req.body
     signInPW = md5Hash.default(signInPW)
     console.log(signInPW)
-    await UserModel.findOne({ signUpEmail: signInEmail })
+     UserModel.findOne({ signUpEmail: signInEmail })
         .then(user => {
             if (user) {
                 if (user.signUpPW == signInPW) {
@@ -124,20 +124,20 @@ app.post('/login', async (req, res) => {
             }
         })
 })
-app.post('/make-list', async (req, res) => {
+app.post('/make-list',  (req, res) => {
     const { id, list } = req.body
-    await CartListModel.findOne({ id: id })
-        .then(async (result) => {
+     CartListModel.findOne({ id: id })
+        .then( (result) => {
             if (!result) {
-                await CartListModel.create(req.body)
+                 CartListModel.create(req.body)
                     .then(user => { res.json(user) })
                     .catch(e => console.log(e))
             }
         })
 })
-app.post('/update-list', async (req, res) => {
+app.post('/update-list',  (req, res) => {
     const { id, listStorage } = req.body
-    await CartListModel.updateOne({ id: id }, { list: listStorage })
+     CartListModel.updateOne({ id: id }, { list: listStorage })
         .then(result => {
             res.json(result)
         })
@@ -145,9 +145,9 @@ app.post('/update-list', async (req, res) => {
             console.log(err)
         })
 })
-app.post('/get-list', async (req, res) => {
+app.post('/get-list',  (req, res) => {
     const { id } = req.body
-    await CartListModel.findOne({ id: id })
+     CartListModel.findOne({ id: id })
         .then(result => {
             res.json(result)
         })
@@ -155,9 +155,9 @@ app.post('/get-list', async (req, res) => {
             console.log(err)
         })
 })
-app.post('/update-cart', async (req, res) => {
+app.post('/update-cart',  (req, res) => {
     const { id, cartList } = req.body
-    await CartListModel.updateOne({ id: id }, { list: cartList })
+     CartListModel.updateOne({ id: id }, { list: cartList })
         .then(result => {
             res.json(result)
         })
@@ -165,22 +165,22 @@ app.post('/update-cart', async (req, res) => {
             console.log(err)
         })
 })
-app.post('/make-orders-list', async (req, res) => {
+app.post('/make-orders-list',  (req, res) => {
     const { id, orderList, name, age, phone, address } = req.body
-    await OrderModel.create(req.body)
+     OrderModel.create(req.body)
         .then(orders => res.json(orders))
         .catch(err => res.json(err))
 })
-app.post('/get-order-info', async (req, res) => {
+app.post('/get-order-info',  (req, res) => {
     const { id } = req.body
-    await OrderModel.find({ id: id })
+     OrderModel.find({ id: id })
         .then(orders =>
             res.json(orders)
         )
         .catch(err => res.json(err))
 })
 
-app.post('/find-email', async (req, res) => {
+app.post('/find-email',  (req, res) => {
     verifyCode = crypto.randomInt(
         100000, 999999
     )
@@ -191,7 +191,7 @@ app.post('/find-email', async (req, res) => {
         subject: 'Your verify code is here',
         text: `${verifyCode}`
     };
-    await UserModel.findOne({ signUpEmail: email })
+     UserModel.findOne({ signUpEmail: email })
         .then(user => {
             if (!user) {
                 res.json('Wrong email information')
@@ -215,10 +215,10 @@ app.post('/check-verifyCode', (req, res) => {
         res.json('Wrong verification code')
     }
 })
-app.post('/change-pw', async (req, res) => {
+app.post('/change-pw',  (req, res) => {
     let { email, newPw } = req.body
     newPw = md5Hash.default(newPw)
-    await UserModel.updateOne({ signUpEmail: email }, { signUpPW: newPw })
+     UserModel.updateOne({ signUpEmail: email }, { signUpPW: newPw })
         .then((result) => {
             res.json(result)
         })
