@@ -52,8 +52,8 @@ var transporter = nodemailer.createTransport({
 
 
 
-app.get('/',  (req, res) => {
-     ProductModel.find({})
+app.get('/', (req, res) => {
+    ProductModel.find({})
         .then((product) => {
             res.status(200).json(product)
         })
@@ -63,33 +63,43 @@ app.get('/',  (req, res) => {
 })
 
 app.post('/send-code', (req, res) => {
+
+    const { signUpEmail } = req.body
     signUpCode = crypto.randomInt(
         100000, 999999
     )
-    const { signUpEmail } = req.body
     var mailOptions1 = {
         from: 'nguyenkhangphuc2005@gmail.com',
         to: `${signUpEmail}`,
         subject: 'Your sign up code is here',
         text: `${signUpCode}`
-    };
-    transporter.sendMail(mailOptions1, function (error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log('Email sent: ' + info.response);
-        }
-    });
+    }
+    UserModel.findOne({ signUpEmail })
+        .then(user => {
+            if (!user) {
+                transporter.sendMail(mailOptions1, function (error, info) {
+                    if (error) {
+                        console.log(error);
+                    } else {
+                        console.log('Email sent: ' + info.response);
+                        res.json(result)
+                    }
+                })
+            } else {
+                res.json('Email already in use')
+            }
+        })
+
 })
 
 
-app.post('/signup',  (req, res) => {
+app.post('/signup', (req, res) => {
     const { username, signUpEmail, signUpPW, code } = req.body
     if (code == signUpCode) {
-         UserModel.findOne({ signUpEmail })
-            .then( user => {
+        UserModel.findOne({ signUpEmail })
+            .then(user => {
                 if (!user) {
-                     UserModel.create({
+                    UserModel.create({
                         ...req.body,
                         signUpPW: md5Hash.default(signUpPW)
                     })
@@ -105,11 +115,11 @@ app.post('/signup',  (req, res) => {
 })
 
 
-app.post('/login',  (req, res) => {
+app.post('/login', (req, res) => {
     let { signInEmail, signInPW } = req.body
     signInPW = md5Hash.default(signInPW)
     console.log(signInPW)
-     UserModel.findOne({ signUpEmail: signInEmail })
+    UserModel.findOne({ signUpEmail: signInEmail })
         .then(user => {
             if (user) {
                 if (user.signUpPW == signInPW) {
@@ -124,20 +134,20 @@ app.post('/login',  (req, res) => {
             }
         })
 })
-app.post('/make-list',  (req, res) => {
+app.post('/make-list', (req, res) => {
     const { id, list } = req.body
-     CartListModel.findOne({ id: id })
-        .then( (result) => {
+    CartListModel.findOne({ id: id })
+        .then((result) => {
             if (!result) {
-                 CartListModel.create(req.body)
+                CartListModel.create(req.body)
                     .then(user => { res.json(user) })
                     .catch(e => console.log(e))
             }
         })
 })
-app.post('/update-list',  (req, res) => {
+app.post('/update-list', (req, res) => {
     const { id, listStorage } = req.body
-     CartListModel.updateOne({ id: id }, { list: listStorage })
+    CartListModel.updateOne({ id: id }, { list: listStorage })
         .then(result => {
             res.json(result)
         })
@@ -145,9 +155,9 @@ app.post('/update-list',  (req, res) => {
             console.log(err)
         })
 })
-app.post('/get-list',  (req, res) => {
+app.post('/get-list', (req, res) => {
     const { id } = req.body
-     CartListModel.findOne({ id: id })
+    CartListModel.findOne({ id: id })
         .then(result => {
             res.json(result)
         })
@@ -155,9 +165,9 @@ app.post('/get-list',  (req, res) => {
             console.log(err)
         })
 })
-app.post('/update-cart',  (req, res) => {
+app.post('/update-cart', (req, res) => {
     const { id, cartList } = req.body
-     CartListModel.updateOne({ id: id }, { list: cartList })
+    CartListModel.updateOne({ id: id }, { list: cartList })
         .then(result => {
             res.json(result)
         })
@@ -165,22 +175,22 @@ app.post('/update-cart',  (req, res) => {
             console.log(err)
         })
 })
-app.post('/make-orders-list',  (req, res) => {
+app.post('/make-orders-list', (req, res) => {
     const { id, orderList, name, age, phone, address } = req.body
-     OrderModel.create(req.body)
+    OrderModel.create(req.body)
         .then(orders => res.json(orders))
         .catch(err => res.json(err))
 })
-app.post('/get-order-info',  (req, res) => {
+app.post('/get-order-info', (req, res) => {
     const { id } = req.body
-     OrderModel.find({ id: id })
+    OrderModel.find({ id: id })
         .then(orders =>
             res.json(orders)
         )
         .catch(err => res.json(err))
 })
 
-app.post('/find-email',  (req, res) => {
+app.post('/find-email', (req, res) => {
     verifyCode = crypto.randomInt(
         100000, 999999
     )
@@ -191,7 +201,7 @@ app.post('/find-email',  (req, res) => {
         subject: 'Your verify code is here',
         text: `${verifyCode}`
     };
-     UserModel.findOne({ signUpEmail: email })
+    UserModel.findOne({ signUpEmail: email })
         .then(user => {
             if (!user) {
                 res.json('Wrong email information')
@@ -215,10 +225,10 @@ app.post('/check-verifyCode', (req, res) => {
         res.json('Wrong verification code')
     }
 })
-app.post('/change-pw',  (req, res) => {
+app.post('/change-pw', (req, res) => {
     let { email, newPw } = req.body
     newPw = md5Hash.default(newPw)
-     UserModel.updateOne({ signUpEmail: email }, { signUpPW: newPw })
+    UserModel.updateOne({ signUpEmail: email }, { signUpPW: newPw })
         .then((result) => {
             res.json(result)
         })

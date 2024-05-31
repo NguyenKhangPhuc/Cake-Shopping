@@ -108,11 +108,11 @@
 }
 
 .cart_product_img {
-  width: 20%;
-  height: 100%;
+  width: 30%;
+  height: 80%;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 100% 90%;
+  background-size: 100% ;
   cursor: pointer;
 }
 

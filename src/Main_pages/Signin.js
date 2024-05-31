@@ -94,9 +94,15 @@ function Signin() {
     if (!username || !signUpEmail || !signUpPW) {
       alert("please fill in the blank")
     } else {
-      setSignUp(true)
-      await axios.post(dbUrl+'/send-code', { signUpEmail })
-        .then(res => console.log(res))
+
+      await axios.post(dbUrl + '/send-code', { signUpEmail })
+        .then(result => {
+          if (result.data == 'Email already in use') {
+            alert('Email already in use')
+          } else {
+            setSignUp(true)
+          }
+        })
         .catch(err => console.log(err))
     }
   }
