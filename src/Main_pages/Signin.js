@@ -90,24 +90,25 @@ function Signin() {
     setId(null)
     window.localStorage.removeItem("userId")
   }
-  const sendCode = async () => {
+  const sendCode = () => {
     if (!username || !signUpEmail || !signUpPW) {
       alert("please fill in the blank")
     } else {
-
-      await axios.post(dbUrl + '/send-code', { signUpEmail })
+      axios.post(dbUrl + '/send-code', { signUpEmail })
         .then(result => {
           if (result.data == 'Email already in use') {
             alert('Email already in use')
           } else {
             setSignUp(true)
           }
+          console.log(result.data)
         })
         .catch(err => console.log(err))
     }
+    console.log(signUpEmail)
   }
   return (
-    <div className='signin_big_layout' onClick={() => console.log(list)}>
+    <div className='signin_big_layout'>
 
       <Shopsystem1 />
       <div className='signin_layout'>

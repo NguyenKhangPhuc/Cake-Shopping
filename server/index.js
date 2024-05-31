@@ -68,28 +68,13 @@ app.post('/send-code', (req, res) => {
     signUpCode = crypto.randomInt(
         100000, 999999
     )
-    var mailOptions1 = {
-        from: 'nguyenkhangphuc2005@gmail.com',
-        to: `${signUpEmail}`,
-        subject: 'Your sign up code is here',
-        text: `${signUpCode}`
-    }
+
     UserModel.findOne({ signUpEmail })
         .then(user => {
-            if (!user) {
-                transporter.sendMail(mailOptions1, function (error, info) {
-                    if (error) {
-                        console.log(error);
-                    } else {
-                        console.log('Email sent: ' + info.response);
-                        res.json(result)
-                    }
-                })
-            } else {
-                res.json('Email already in use')
-            }
-        })
+            res.json(user)
 
+        })
+        .catch(err => console.log(err))
 })
 
 
