@@ -121,7 +121,7 @@ function Home() {
         navigate(`/Home/${id}`)
     }
     return (
-        <div style={{ width: "100vw", height: "auto",display:"flex",justifyContent:"center",alignItems:"center" }}>
+        <div style={{ width: "auto", minHeight: "100vh",display:"flex",justifyContent:"center",alignItems:"center" }}>
             {productData ?
                 <div className='home_big_lay'>
                     <div className='home_layout' >
