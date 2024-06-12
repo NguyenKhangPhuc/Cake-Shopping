@@ -60,7 +60,14 @@
     border-radius: 30px;
     margin-bottom: 5em;
 }
-
+@media screen and (max-width: 1900px){
+    .delivery_title {
+        font-size: 200%;
+        width: 85%;
+        height: 10%;
+        padding-top: 5%;
+    }
+}
 @media screen and (max-width: 430px) {
     .delivery_big_lay {
         width: 100%;

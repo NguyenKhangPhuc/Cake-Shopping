@@ -241,7 +241,7 @@
 
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 1000px) {
     .productdetail_layout {
         height: auto;
         width: 100%;

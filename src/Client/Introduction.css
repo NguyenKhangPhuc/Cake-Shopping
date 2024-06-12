@@ -174,8 +174,133 @@
 .tiktok_logo:hover {
     width: 5.5%;
 }
+@media screen and (max-width: 1900px) {
+    
 
-@media screen and (max-width: 430px) {
+
+.introduction_layout{
+    height: 110vh;
+}
+    .title{
+    padding-top: 17%;
+    }
+
+
+    .intro_poster {
+        width: 100%;
+        height: 100%;
+
+        background-size: 90%;
+        
+        
+    }
+
+    .shop_introduction {
+       
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .introduction_title {
+        font-size: 150%;
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+
+        justify-content: center;
+    }
+
+    .introduction_text {
+        font-size: 95%;
+
+        justify-content: center;
+        width: 90%;
+
+    }
+
+    .contact_information {
+
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+padding-top: 5%;
+        align-items: center;
+    }
+
+    .contact_title {
+        font-size: 150%;
+        width: auto;
+        flex-wrap: wrap;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+
+        height: 10%;
+        justify-content: center;
+
+    }
+
+    .contact_text {
+        font-size: 100%;
+        width: 90%;
+
+    }
+
+    .bottom_bar {
+        width: 100%;
+        height: 25vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bottom_shopsystem {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        color: #b0b2b5;
+        flex-direction: column;
+
+
+    }
+
+    .bottom_shopsystem_features {
+        width: 70%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        font-size: 80%;
+        gap: 1em;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+
+    .bottom_features {
+        cursor: pointer;
+        font-size: 80%;
+        transition: 0.5s;
+    }
+
+    .application {
+        width: 40%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 1100px){
+    .title{
+        padding-top: 10%;   
+    }
+}
+@media screen and (max-width: 1000px) {
     .intro_big_lay {
         width: 100%;
         height: 100vh;

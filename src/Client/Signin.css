@@ -172,7 +172,7 @@
   background-color: #15466e;
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 800px) {
  
   .signin_form{
     

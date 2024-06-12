@@ -118,7 +118,7 @@ button {
     background: transparent;
 }
 
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 900px) {
     .user_form {
 
         height: 100%;
