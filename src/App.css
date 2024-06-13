@@ -915,7 +915,8 @@
   
   }
 }
-@media screen and (max-width: 1400px){
+
+@media screen and (max-width: 1270px){
   .home_layout{
     display: block;
     width: 100%;
@@ -956,6 +957,59 @@
     padding-bottom: 5%;
   }
 }
+
+@media screen and (max-width: 1290px){
+  .home_layout{
+    display: block;
+    width: 100%;
+    height: 80vh;
+  }
+  .shop_slideposter {
+    width: 100%;
+    height: 80%;
+  
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
+  }
+  .slide {
+    width: 100%;
+    height: 80%;
+    background-repeat: no-repeat;
+    background-size: 85% ;
+    background-position: center;
+  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.5s;
+    
+  }
+  .shop_categories {
+    width: 100%;
+    height: 10%;
+  
+    display: flex;
+    justify-content: center;
+    gap: 4.5em;
+    font-size: 60%;
+    padding-bottom: 5%;
+    padding-top: 10%;
+  }
+  .cake_title{
+    font-size: 70%;
+  }
+  .cake_price{
+    font-size: 70%;
+  }
+  .showmore_text{
+    font-size: 70%;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .header {
     display: none;

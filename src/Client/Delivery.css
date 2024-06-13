@@ -68,6 +68,14 @@
         padding-top: 5%;
     }
 }
+@media screen and (max-width: 1290px){
+    .delivery_lay_1{
+        padding-bottom: 25%;
+    }
+    .delivery_helps{
+        font-size: 100%;
+    }
+}
 @media screen and (max-width: 430px) {
     .delivery_big_lay {
         width: 100%;

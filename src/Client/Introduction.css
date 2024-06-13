@@ -300,6 +300,11 @@ padding-top: 5%;
         padding-top: 10%;   
     }
 }
+@media screen and (max-width: 1290px){
+    .bottom_bar{
+        padding-bottom: 4%;
+    }
+}
 @media screen and (max-width: 1000px) {
     .intro_big_lay {
         width: 100%;
