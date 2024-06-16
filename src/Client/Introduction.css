@@ -169,6 +169,7 @@
     cursor: pointer;
     background-color: aliceblue;
     border-radius: 10px;
+    background-color: transparent;
 }
 
 .tiktok_logo:hover {

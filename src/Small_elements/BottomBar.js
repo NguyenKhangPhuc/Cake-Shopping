@@ -30,7 +30,7 @@ function BottomBar() {
                 <div className='application'>
                     <img src='https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/facebook-app-round-white-icon.png' className='fb_logo'></img>
                     <img src='https://upload.wikimedia.org/wikipedia/commons/2/28/Instagram_logo.png' className='insta_logo' />
-                    <img src='https://seeklogo.com/images/T/tiktok-share-icon-black-logo-29FFD062A0-seeklogo.com.png' className='tiktok_logo' />
+                    
                 </div>
             </div>
         </div>
