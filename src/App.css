@@ -845,6 +845,7 @@
   right: -90%;
   height: 90px;
   animation: roadAnimation 1.4s linear infinite;
+  z-index: -1;
 }
 
 @keyframes roadAnimation {
