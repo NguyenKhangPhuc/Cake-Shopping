@@ -29,7 +29,7 @@ function ProductDetail() {
     useEffect(() => {
         handleGetApi()
         console.log(id)
-
+        
     }, [])
     const handleGetApi = async () => {
         await axios.post(dbUrl + '/get-list', { id })

@@ -53,7 +53,7 @@ function GetNewPw() {
         if (newPw.length < 9) {
             alert('Password too weak')
         } else {
-            await axios.post(dbUrl + 'change-pw', { email, newPw })
+            await axios.post(dbUrl + '/change-pw', { email, newPw })
                 .then(res => {
                     console.log(res)
                     navigate('/Signin')

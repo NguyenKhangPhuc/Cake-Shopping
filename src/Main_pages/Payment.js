@@ -13,7 +13,7 @@ function Payment() {
           <div className='direct_payment_policies'>
             <div className='direct_payment_title'>Payment Upon Delivery</div>
             <div className='direct_policies_text'>
-              <div>– Customers can place orders through our website at the350f.com, and our staff will call to confirm the order details and provide additional information.</div>
+              <div>– Customers can place orders through our website at https://cake-shop-sigma.vercel.app/, and our staff will call to confirm the order details and provide additional information.</div>
               <div>
                 – You will pay the full amount of the order to the delivery person immediately after checking the status of the order (ensuring that the correct products are intact, and all accompanying accessories such as candles and congratulatory tags are present).
               </div>
@@ -24,10 +24,10 @@ function Payment() {
           <div className='transfer_payment_policies'>
             <div className='transfer_payment_title'>Bank Transfer Payment</div>
             <div className='transfer_payment_text'>Customers can settle their invoices by transferring funds to The Cake bakery's account with the following banks and contact Hotline to confirm the information.</div>
-            
+
             <div className='bank_information'>
               <img src='https://the350f.com/wp-content/uploads/2021/05/logo-Vietcombank.png' className='bank_logo' />
-              <div style={{fontWeight: 'bold'}}>
+              <div style={{ fontWeight: 'bold' }}>
                 <div>• Account Holder: Nguyen Khang Phuc</div>
                 <div>• Account Number: 1040.6479.50</div>
                 <div>• Branch: Ho Chi Minh City</div>
@@ -37,8 +37,8 @@ function Payment() {
         </div>
       </div>
 
-      <ContactBoard/>
-      <BottomBar/>
+      <ContactBoard />
+      <BottomBar />
     </div>
   )
 }

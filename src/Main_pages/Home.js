@@ -42,6 +42,7 @@ function Home() {
         console.log(product)
         setProductData(product.data)
         setDefaultCake(product.data)
+
     }
     const slideImg = [
         'https://the350f.com/wp-content/uploads/2021/05/1600x678.jpg',
@@ -121,7 +122,7 @@ function Home() {
         navigate(`/Home/${id}`)
     }
     return (
-        <div style={{ width: "auto", minHeight: "100vh",display:"flex",justifyContent:"center",alignItems:"center" }}>
+        <div style={{ width: "auto", minHeight: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
             {productData ?
                 <div className='home_big_lay'>
                     <div className='home_layout' >
@@ -206,7 +207,7 @@ function Home() {
                         })}
                     </div>
                     <BottomBar />
-                </div> : 
+                </div> :
                 <div className="loader" >
                     <div className="truckWrapper">
                         <div className="truckBody">
@@ -335,8 +336,8 @@ function Home() {
                             ></path>
                         </svg>
                     </div>
-                    <div className='loading_text' style={{fontSize: "95%",paddingTop:"10px"}}>Loading Products!</div>
-                    <div className='loading_text' style={{fontSize: "90%",paddingTop:"3px"}}>Please wait</div>
+                    <div className='loading_text' style={{ fontSize: "95%", paddingTop: "10px" }}>Loading Products!</div>
+                    <div className='loading_text' style={{ fontSize: "90%", paddingTop: "3px" }}>Please wait</div>
                 </div>}
         </div>
 
