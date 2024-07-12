@@ -39,7 +39,7 @@ function Home() {
     }, [])
     const handleGetApi = async () => {
         product = await axios.get(dbUrl)
-        console.log(product)
+       
         setProductData(product.data)
         setDefaultCake(product.data)
 
@@ -59,7 +59,7 @@ function Home() {
         const FilterCake = defaultCake.filter((products, index) => {
             return products.categories.includes(sign)
         })
-        console.log(FilterCake)
+        
         setProductData(FilterCake)
     }
     const handleShowFilter = () => {
@@ -83,7 +83,7 @@ function Home() {
         const FilterCake = defaultCake.filter((products, index) => {
             return products.categories.includes(sign)
         })
-        console.log(FilterCake)
+      
         setProductData(FilterCake)
     }
     const AscendingPrice = () => {
@@ -107,7 +107,7 @@ function Home() {
             setSearchArr([])
         } else {
             setSearchArr(searchFilter)
-            console.log(searchArr)
+            
         }
     }
     const chooseSearchResult = (cakeName) => {
@@ -115,7 +115,7 @@ function Home() {
             return products.cake_title == cakeName
         })
         setProductData(chooseResult)
-        console.log(chooseResult)
+        
         setSearchArr([])
     }
     const goCakeDetail = (id) => {

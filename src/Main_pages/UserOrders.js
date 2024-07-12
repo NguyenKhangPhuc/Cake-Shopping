@@ -22,7 +22,7 @@ function UserOrders() {
             .then(result => {
                 orderList = result.data.list
                 setOrderList(orderList)
-                console.log(orderList)
+                
 
             })
             .catch(err => console.log(err))
@@ -33,13 +33,13 @@ function UserOrders() {
         } else {
             for (let i = 0; i < orderList.length; i++) {
                 totalPrice += orderList[i][0].realPrice
-                console.log(totalPrice)
+                
             }
             setTotalPrice(totalPrice)
 
             await axios.post(dbUrl + '/make-orders-list', { id, orderList, name, age, phone, address, totalPrice })
                 .then(res => {
-                    console.log(res)
+                   
                     navigate('/order-information')
                 })
                 .catch(err => console.log(err))

@@ -22,13 +22,13 @@ function Shopsystem1() {
     const [showShopsystem, setShowShopsystem] = useState(false)
     const navigate = useNavigate()
     useEffect(() => {
-        console.log(id)
+    
         if (id) {
             axios.post(dbUrl + '/get-list', { id })
                 .then(result => {
                     cartList = result.data.list
                     setCartList(cartList)
-                    console.log(cartList)
+                    
                 })
                 .catch(err => console.log(err))
         }
@@ -47,7 +47,7 @@ function Shopsystem1() {
         const filterProduct = cartList.filter((cartProducts, index2) => {
             return index2 != index
         })
-        console.log(filterProduct)
+        
         cartList = filterProduct
         setCartList(cartList)
         await axios.post(dbUrl + '/update-cart', { id, cartList })

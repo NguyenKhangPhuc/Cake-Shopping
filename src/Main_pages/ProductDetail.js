@@ -28,13 +28,13 @@ function ProductDetail() {
     let recommendedCake
     useEffect(() => {
         handleGetApi()
-        console.log(id)
+       
         
     }, [])
     const handleGetApi = async () => {
         await axios.post(dbUrl + '/get-list', { id })
             .then(result => {
-                console.log(result)
+                
                 if (result) {
                     setListStorage(result?.data.list)
                 }
@@ -58,7 +58,7 @@ function ProductDetail() {
                 return cakes
             }
         })
-        console.log(cakeIndex)
+  
         recommendedCake = product.data.filter((recommendCake, index) => {
             if (cakeIndex > 3) {
                 return index < cakeIndex && index >= cakeIndex - 4
@@ -67,7 +67,7 @@ function ProductDetail() {
             }
         })
         setRecommendList(recommendedCake)
-        console.log(product.data)
+       
 
     }
     const chooseImg = (imgIndex, src) => {
@@ -79,16 +79,16 @@ function ProductDetail() {
 
     }
     const addToCart = async () => {
-        console.log(productData)
+      
         if (!id) {
             navigate('/Signin')
         } else if (id && listStorage.length < 5) {
             listStorage = [...listStorage, productData]
             setListStorage(listStorage)
-            console.log(listStorage)
+           
             await axios.post(dbUrl + '/update-list', { id, listStorage })
                 .then(result => {
-                    console.log(result)
+                   
                     if (result) {
                         navigate('/')
                     }
@@ -97,7 +97,7 @@ function ProductDetail() {
         } else if (listStorage.length >= 5) {
             alert('Full of space in the cart !')
         }
-        console.log(listStorage)
+  
 
     }
     const goCakeDetails = (id) => {

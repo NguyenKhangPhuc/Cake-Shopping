@@ -15,10 +15,10 @@ function OrderInfo() {
     useEffect(() => {
         axios.post(dbUrl + '/get-order-info', { id })
             .then(res => {
-                console.log(res)
+               
                 list = res.data
                 setList(list)
-                console.log(list)
+               
             })
             .catch(err => console.log(err))
 

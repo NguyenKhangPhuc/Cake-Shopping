@@ -22,7 +22,7 @@ function Signin() {
   const [code, setCode] = useState('')
   const navigate = useNavigate()
   useEffect(() => {
-    console.log(id)
+    
     if (id) {
       setDisabled(true)
     } else {
@@ -43,7 +43,7 @@ function Signin() {
     } else {
       await axios.post(dbUrl + '/signup', { username, signUpEmail, signUpPW, code })
         .then(result => {
-          console.log(result)
+          
           if (result.data == 'Email already in use') {
             alert('Email already in use')
           } else if (result.data == 'Wrong verification code') {
@@ -63,15 +63,15 @@ function Signin() {
     } else {
       await axios.post(dbUrl + '/login', { signInEmail, signInPW })
         .then(async result => {
-          console.log(result.data)
+         
           if (result.data.mssg == 'success') {
             id = result?.data.user._id
             setId(id)
-            console.log(id)
+            
             window.localStorage.setItem("userId", id)
             await axios.post(dbUrl + '/make-list', { id, list })
               .then(res => {
-                console.log(res)
+                
               })
               .catch(err => console.log(err))
             navigate('/')
@@ -98,7 +98,7 @@ function Signin() {
         .then(result => {
           if (result.data == 'Email already in use') {
             alert('Email already in use')
-            console.log(result.data)
+            
           } else if (result.data == 'success') {
             setSignUp(true)
           }

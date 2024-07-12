@@ -55,7 +55,7 @@ function GetNewPw() {
         } else {
             await axios.post(dbUrl + '/change-pw', { email, newPw })
                 .then(res => {
-                    console.log(res)
+                 
                     navigate('/Signin')
                 })
                 .catch(err => console.log(err))
