@@ -90,22 +90,21 @@ function Signin() {
     setId(null)
     window.localStorage.removeItem("userId")
   }
-  const sendCode = () => {
+  const sendCode = async () => {
     if (!username || !signUpEmail || !signUpPW) {
       alert("please fill in the blank")
     } else {
-      axios.post(dbUrl + '/send-code', { signUpEmail })
+      await axios.post(dbUrl + '/send-code', { signUpEmail })
         .then(result => {
           if (result.data == 'Email already in use') {
             alert('Email already in use')
-          } if (result) {
-            signUp = true
-            setSignUp(signUp)
+            console.log(result.data)
+          } else if (result.data == 'success') {
+            setSignUp(true)
           }
 
         })
         .catch(err => console.log(err))
-      console.log(signUp)
     }
 
   }

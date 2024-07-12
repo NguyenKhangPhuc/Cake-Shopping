@@ -81,7 +81,7 @@ app.post('/send-code', (req, res) => {
                         console.log(error);
                     } else {
                         console.log('Email sent: ' + info.response);
-                        res.json(user)
+                        res.json("success")
                     }
                 })
             } else {
