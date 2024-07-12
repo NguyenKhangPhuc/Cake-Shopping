@@ -63,12 +63,10 @@ app.get('/', (req, res) => {
 })
 
 app.post('/send-code', (req, res) => {
-
     const { signUpEmail } = req.body
     signUpCode = crypto.randomInt(
         100000, 999999
     )
-
     UserModel.findOne({ signUpEmail })
         .then(user => {
             if (!user) {
@@ -83,7 +81,7 @@ app.post('/send-code', (req, res) => {
                         console.log(error);
                     } else {
                         console.log('Email sent: ' + info.response);
-                        res.json(result)
+                        res.json(user)
                     }
                 })
             } else {
