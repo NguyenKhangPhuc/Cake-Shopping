@@ -9,17 +9,18 @@ var md5Hash = require("md5-hash")
 var nodemailer = require('nodemailer');
 const cors = require('cors')
 const app = express()
-
+require('dotenv').config()
+console.log(process.env.PASSWORD)
 app.use(express.json())
 app.use(cors())
-
+const port = process.env.PORT || 4000;
 let userCode
 let signUpCode
 let verifyCode
 
 const connectDB = async () => {
     try {
-        const conn = await mongoose.connect("mongodb+srv://nguyenkhangphuc2005:1231232312123@shoppingdb.b1a0wet.mongodb.net/?retryWrites=true&w=majority&appName=ShoppingDB", {
+        const conn = await mongoose.connect(`mongodb+srv://nguyenkhangphuc2005:${process.env.PASSWORD}@shoppingdb.b1a0wet.mongodb.net/?retryWrites=true&w=majority&appName=ShoppingDB`, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             dbName: 'test'
@@ -30,8 +31,8 @@ const connectDB = async () => {
     }
 }
 connectDB().then(() => {
-    app.listen(5000, () => {
-        console.log("Server is running on port 3000")
+    app.listen(port, () => {
+        console.log(`Server is running on port ${port}`)
     })
 
 
